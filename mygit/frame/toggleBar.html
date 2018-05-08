@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+	<TITLE>网上纳税申报系统</TITLE>
+	<META http-equiv="X-UA-Compatible" content="IE=7"/>
+        <meta name="renderer" content="ie-comp"/>
+<script type="text/javascript" src="../resources/scripts/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../resources/styles/cupertino/js/jquery-ui-1.10.1.custom.min.js"></script>
+		<style>
+.navPoint {
+	FONT-SIZE: 12px;
+	CURSOR: hand;
+	FONT-FAMILY: "Webdings"
+}
+</style>
+		<script type="text/javascript">
+var hidden = "false";
+function switchSysBarB() {
+	var splitterImgId = document.getElementById("splitterImgId");
+	if (hidden == "false") {
+		$("#main", top.document).attr("cols", "0,7,*");
+		$("#splitterImgId").attr("src", "../resources/images/spliter_show.gif");
+		hidden = "true";
+	} else {
+		$("#main", top.document).attr("cols", "188,7,*");
+		$("#splitterImgId").attr("src", "../resources/images/spliter_hide.gif");
+		hidden = "false";
+	}
+}
+$(document).ready(function() {
+	$("#splitterImgId").css("cursor", "hand");
+	$("#splitterImgId").bind("click", switchSysBarB);
+});
+</script>
+	</head>
+	<body text="#000000" background="../resources/images/splitter_bg.gif"
+		leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+		<table height="100%" cellspacing=0 cellpadding=0 width="100%" border=0
+			style="position: relative;">
+			<tr valign="middle" align="center" height="100%">
+				<td align="center" valign="middle">
+					<img src="../resources/images/spliter_hide.gif" id="splitterImgId" />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

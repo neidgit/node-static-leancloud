@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#pop {
+	background: #fff;
+	width: 460px;
+	border: 1px solid #e0e0e0;
+	font-size: 12px;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+
+#popHead {
+	line-height: 32px;
+	background: #99d3fb;
+	border-bottom: 1px solid #e0e0e0;
+	position: relative;
+	font-size: 12px;
+	padding: 0 0 0 10px;
+}
+
+#popHead h2 {
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 32px;
+	height: 32px;
+}
+
+#popHead #popClose {
+	position: absolute;
+	right: 10px;
+	top: 1px;
+}
+
+#popHead a#popClose:hover {
+	color: #f00;
+	cursor: pointer;
+}
+
+#popContent {
+	padding: 5px 10px;
+}
+
+#popTitle a {
+	line-height: 16px;
+	font-size: 12px;
+	font-family: "宋体";
+	color: black;
+	text-decoration: none;
+}
+
+#popTitle td {
+	line-height: 16px;
+	font-size: 12px;
+	font-family: "宋体";
+	color: black;
+}
+
+#popTitle a:hover {
+	color: #f60;
+}
+
+#popIntro {
+	text-indent: 24px;
+	line-height: 160%;
+	margin: 5px 0;
+	color: #666;
+}
+
+#popMore {
+	text-align: right;
+	border-top: 1px dotted #ccc;
+	line-height: 24px;
+	margin: 8px 0 0 0;
+}
+
+#popMore input {
+	color: #f60;
+}
+
+#popMore input:hover {
+	color: #f00;
+}

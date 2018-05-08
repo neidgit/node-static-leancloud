@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<META http-equiv="X-UA-Compatible" content="IE=7" />
+		<meta name="renderer" content="ie-comp" />
+		<TITLE>网上纳税申报系统</TITLE>
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="../resources/scripts/jquery/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../control/common_sb.js"></script>
+		
+		<link rel="stylesheet" href='../resources/styles/aisinoCSS.css' type="text/css" />
+		<style>
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+html,body,div,form,ul,ol,li,dl,dt,dd,p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.logoff {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	cursor: hand;
+	right: 25px;
+	top: 8px;
+	display: inline-block;
+}
+
+.helper {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	cursor: hand;
+	right: 70px;
+	top: 10px;
+	display: inline-block;
+}
+
+.help {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	cursor: hand;
+	right: 115px;
+	top: 8px;
+	display: inline-block;
+}
+
+.chaobao {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	cursor: hand;
+	right: 155px;
+	top: 8px;
+	display: inline-block;
+}
+
+.renzheng {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	cursor: hand;
+	right: 195px;
+	top: 8px;
+	display: inline-block;
+}
+</style>
+<script>
+//加载自审通知书提示
+//加载自审报告退回通知
+function init_hxgl(){
+	// $.ajax( {
+	// 	type : "POST",
+	// 	url : "../qysdsHxgl.do",
+	// 	dataType : "json",
+	// 	data : {
+	// 		method : "loadReport"
+	// 	},
+	// 	success : function(data) {
+	// 		if(!data)	return false;
+	// 		if(data.thbz=="Y")
+	// 		{
+	// 			alert(data.thyj);
+	// 		}
+	// 	}
+	// });
+	// $.ajax( {
+	// 		type : "POST",
+	// 		url : "../qysdsHxgl.do",
+	// 		dataType : "json",
+	// 		data : {
+	// 			method : "initNotepaper"
+	// 		},
+	// 		success : function(data) {
+	// 			if(data && data.res && data.iqyjs!='1'){
+	// 				alert('贵企业已被纳入企业自审范围，请打开税局通知页面，进行企业自审工作。');
+	// 				setTimeout("$('#nav',top.document)[0].contentWindow.clickTree('61');",200);
+	// 			}
+	// 		}
+	// 	});
+}
+function disconnect() {
+	var s;
+	try {
+		s = ZKXXVPDN.GetConnect("0");
+	} catch (err) {
+
+	}
+}
+</script>
+
+<script language="javascript">
+window.onbeforeunload = function() {
+	disconnect();
+	if (window.event.reason == false) {
+		window.event.cancelBubble = true;
+	}
+}
+</script>
+	</head>
+	<body onload="setTimeout('init_hxgl();',500);">
+		<div stype="display:none">
+			<OBJECT classid="clsid:6A8A9F39-647E-406D-B4E3-79E39475B1F7"
+				codebase="../applet/ZKXXVPDNProj1.cab" id="ZKXXVPDN" width=0 height=0
+				hspace=0 vspace=0>
+			</OBJECT>
+		</div>
+		<input name="exitDisplay" id="exitDisplay" type="hidden" value="block" />
+		<div align="left" id="north-div"
+			style="background-color: RGB(116, 198, 226); height: 74px auto;">
+			<div class="">
+				<img src="../resources/images/sbui/top.jpg">
+			</div>
+			<!-- <div class="head_name"></div> head_logo-->
+			<div style="float: right; vertical-align: bottom; margin: 0 auto;">
+				<a style="cursor: hand"><span title='帮助' class="help"
+					style="filter: progid :       DXImageTransform.Microsoft.AlphaImageLoader (       src =       '../resources/images/sbui/help-on.gif', sizingMethod =       'scale' );"></span>
+				</a>
+				<a href="../applet/WssbHepler_js3q.exe"><span title='下载小助手'
+					class="helper"
+					style="filter: progid :       DXImageTransform.Microsoft.AlphaImageLoader (       src =       '../resources/images/sbui/helper.gif', sizingMethod =       'scale' );"></span>
+				</a>
+				<span title='注销' class="logoff"
+					style="filter: progid :       DXImageTransform.Microsoft.AlphaImageLoader (       src =       '../resources/images/sbui/exit-on.gif', sizingMethod =       'scale' );"
+					onclick="doLogoff();"></span>
+			</div>
+		</div>
+	</body>
+</html>

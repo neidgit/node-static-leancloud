@@ -1,0 +1,239 @@
+
+
+<HTML>
+<HEAD>
+<META http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="ie-comp" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+<script type="text/javascript" src="../../resources/scripts/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../resources/styles/cupertino/js/jquery-ui-1.10.1.custom.min.js"></script>
+<link href="../../resources/styles/style.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/styles/Toolbar.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../resources/scripts/jquery/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../../resources/scripts/Toolbar.js"></script>
+
+
+<TITLE>打印</TITLE>
+<style>
+ #selectFb{
+ width:400px;
+  left:450px;
+ }</style>
+</HEAD>
+
+<BODY style="margin:7px auto;">
+	<div id="toolbarId"></div>
+	<div id="selectFb">
+		&nbsp;<span>请选择：</span>&nbsp; <select
+			onchange="changeFbSelect(this.options[this.options.selectedIndex].value)">
+		</select>
+	</div>
+	<br />
+	<!--startprint-->
+	<div id="tablePages" style="padding-top:20px;"></div>
+	<!--endprint-->
+	<OBJECT id="WebBrowser" classid=CLSID:8856F961-340A-11D0-A96B-00C04FD705A2 height=0 width=0 VIEWASTEXT> </OBJECT>
+</BODY>
+<script type="text/javascript">
+var bblist;
+var contextPath = "/js3q";
+	$(document).ready(function() {
+		createToolbar();
+		//$("#print").html(window.opener.printHtml);
+		$("#tablePages").html(window.opener.document.getElementById("tablePages").innerHTML.replace(/<BR>/g,""));
+		bblist = window.opener.document.getElementById("selectFb");
+		$('#selectFb').find('select').html($(bblist).find('select').html());
+		$(".table_none, .none, input[type='hidden'], .insertBefore:hidden, .append").remove();
+		$(".addBtn,.minusBtn").parents("tr").remove();
+
+		$("#tablePages").find("input").each(function() {$(this).replaceWith($(this).val());});
+		$("#tablePages").find("select").each(function(){$(this).replaceWith($(this).find("option:selected").text());});
+	});
+
+function changeFbSelect(val){
+	
+	$("#tablePages div").hide();
+	$("#"+val).show();
+}
+	function createToolbar() {
+		var toolbar = new Toolbar( {
+			renderTo : 'toolbarId',
+			border : 'top',
+			items : [ 
+				{type : 'button',text : '返回',bodyStyle : 'new',useable : 'T',handler : function(){window.close();}},
+				{type : 'button',text : '导出全部表',bodyStyle : 'new',useable : 'T',handler : function(){e_id=0;exportToExcel();}},
+				{type : 'button',text : '导出当前表',bodyStyle : 'new',useable : 'T',handler : function(){e_id=1;exportToExcel();}},
+				{type : 'button',text : '打印预览',bodyStyle : 'new',useable : 'T',handler : function(){preview_show();}},
+				{type : 'button',text : '页面设置',bodyStyle : 'new',useable : 'T',handler : function(){document.all.WebBrowser.ExecWB(8,1);}},
+				{type : 'button',text : '打印',bodyStyle : 'new',useable : 'T',handler : function(){preview();}
+			} ],
+			active : 'ALL'//激活哪个
+		});
+		toolbar.render();
+		toolbar.genAZ();
+	}
+	
+    //配置网页打印的页眉页脚为空
+    function pagesetup_null(){   
+		var hkey_root,hkey_path,hkey_key;
+	    hkey_root="HKEY_CURRENT_USER";
+	    hkey_path="\\Software\\Microsoft\\Internet Explorer\\PageSetup\\";
+        try{
+            var RegWsh = new ActiveXObject("WScript.Shell");           
+            hkey_key="header";           
+            RegWsh.RegWrite(hkey_root+hkey_path+hkey_key,"");
+            hkey_key="footer";
+            RegWsh.RegWrite(hkey_root+hkey_path+hkey_key,"");
+            //&b 第&p页/共&P页 &b
+            //WebBrowser.printing.header = "居左显示&b居中显示&b居右显示页码，第&p页/共&P页";
+        	//WebBrowser.printing.footer = "居左显示&b居中显示&b居右显示页码，第&p页/共&P页";
+        }catch(e){}
+    }
+    var width;
+    var sId;
+    //全屏显示
+    function fullScreen(){
+    	sId = $("#selectFb select").val();
+    	width = $("#"+sId).find("table").width();
+    	if(parseInt(width) > 1062){
+    		var i = 1062/width;
+    		var tdh = 25*i;//style.css中设置的td高度为25px
+    		var fonts = 12*i;//style.css中设置的font-size为12px
+	        //$("#tablePages div table").css({"zoom":""+i+""});
+	        $("#"+sId+" table").css({"width":"1062","font-size":""+fonts+""});
+	        $("#"+sId+" table td").css({"height":""+tdh+""});
+    	} else {
+    		sId = "";
+    	}
+	}
+	//还原
+	function returnB(){
+		//$("#tablePages div table").css({"zoom":"1"});
+		$("#"+sId+" table").css({"width":""+width+"","font-size":"12px"});
+        $("#"+sId+" table td").css({"height":"25px"});
+	}
+	//打印
+	function preview() {
+		pagesetup_null();
+		fullScreen();
+		$("#toolbarId").hide();
+		$("#selectFb").hide();
+		document.all.WebBrowser.ExecWB(6, 1);
+		$("#toolbarId").show();
+		$("#selectFb").show();
+		if(sId != "")
+			returnB();
+	}
+
+	//打印
+	function preview_show() {
+		pagesetup_null();
+		fullScreen();
+		$("#toolbarId").hide();
+		$("#selectFb").hide();
+		document.all.WebBrowser.ExecWB(7, 1);
+		$("#toolbarId").show();
+		$("#selectFb").show();
+		if(sId != "")
+			returnB();
+	}
+
+	var idTmr = "";
+	function killExcelProcess(appExcel_) {
+		appExcel_.Quit();
+		appExcel_ = null;
+		idTmr = window.setInterval("Cleanup();", 1);
+	}
+	var e_id=0;
+	function exportToExcel() {
+		var appExcel = null;
+		try {
+			appExcel = new ActiveXObject("Excel.Application");
+		} catch (e) {
+			appExcel = null;
+		}
+		if(appExcel == null){
+			try {
+				appExcel = new ActiveXObject("KET.Application");
+			} catch (e) {
+				appExcel = null;
+			}
+		}
+		if(appExcel == null){
+			try {
+				appExcel = new ActiveXObject("ET.Application");
+			} catch (e) {
+				appExcel = null;
+			}
+		}
+		if(appExcel == null){
+			alert("请确认IE安全设置，添加信任站点，ActiveX都启用！或者您的电脑没有安装WPS、Excel软件！");
+			return false;
+		}
+		var filepath = showDirSelection();
+		if(filepath == null)
+			return;
+		try {
+			clipboardData.setData('Text', '');
+
+			killExcelProcess(appExcel);
+			var excelFile = appExcel.workbooks.add;
+			var oRangeRef1 = document.body.createTextRange();
+			var cdt = e_id==1?":not(:hidden)":"";
+			var tables = $("#tablePages div"+cdt);
+			var len = tables.length;
+			var count = appExcel.sheets.count-1;
+			for(i=len;i<count;i++){
+				appExcel.Worksheets.Item(i).Delete;
+			}
+			for(i=count;i<len;i++){
+				excelFile.worksheets.add();
+			}
+			for(i=0;i<len;i++){
+				oRangeRef1.moveToElementText(tables[i]);
+				oRangeRef1.execCommand("Copy");
+				
+				appExcel.WorkSheets(i+2).Name = $("#selectFb select option:eq("+i+")").text();
+				appExcel.WorkSheets(i+2).Activate;
+				appExcel.ActiveSheet.Paste();
+				appExcel.Visible = true;
+			}
+			appExcel.WorkSheets(1).Delete;
+			appExcel.WorkSheets(1).Activate;
+			var sub_name = "_"+(e_id==1?$("#selectFb select option:selected").text():"");
+			var filename = filepath+window.opener.bdmc+sub_name+"("+window.opener.sssqq+"-"+window.opener.sssqz+").xls";
+			excelFile.SaveAs(filename);
+			alert("导出文件至："+filename);
+		} catch (e) {
+			alert(e);
+			return false;
+		}
+		clipboardData.setData('text', '');
+	}
+	function showDirSelection(){
+		try {
+			var message = "请选择文件夹";
+			var Shell  = new ActiveXObject("Shell.Application");
+			var Folder = Shell.BrowseForFolder(0, message,64, 17); //起始目录为：我的电脑
+	 		//var Folder = Shell.BrowseForFolder(0,message,0x0011,0); //起始目录为：桌面
+		   	if(Folder != null){
+					Folder = Folder.items(); // 返回 FolderItems 对象
+				    Folder = Folder.item();  // 返回 Folderitem 对象
+				    Folder = Folder.Path;  // 返回路径
+				    if(Folder.charAt(Folder.length-1) != "\\"){
+				     	Folder = Folder + "\\";
+				    }
+		    	return Folder;
+			}
+			return null;
+		}catch (e) {
+	        alert(e.message);
+	    }
+	}	
+</script>
+</HTML>

@@ -1,0 +1,523 @@
+<html>
+	<HEAD><TITLE>网上纳税申报系统</TITLE>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta name="renderer" content="ie-comp"/>
+		<meta http-equiv="Pragma" content="no-cache"/> 
+		<meta http-equiv="Cache-Control" content="no-cache"/> 
+		<meta http-equiv="Expires" content="0"/> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<SCRIPT type=text/javascript src="../resources/scripts/jquery/jquery-1.8.3.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="../resources/scripts/jquery/jquery.blockUI.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="../resources/scripts/myUtils.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="../resources/scripts/qyj.pop.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="../resources/styles/cupertino/js/jquery-ui-1.10.1.custom.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="../resources/scripts/jquery/jquery.alerts.js"></SCRIPT>
+<LINK rel=stylesheet type=text/css href="../resources/styles/alert/jquery.alerts.css">
+<LINK rel=stylesheet type=text/css href="../resources/styles/aisinoCSS.css">
+<LINK rel=stylesheet type=text/css href="../resources/styles/public/css/table.css">
+<LINK rel=stylesheet type=text/css href="../resources/styles/public/css/pop.css">
+<LINK rel=stylesheet type=text/css href="../resources/styles/cupertino/css/cupertino/jquery-ui-1.10.1.custom.min.css">
+<STYLE>.ysbqcBtn {
+	TEXT-ALIGN: center; MARGIN: 1px auto 0px; CURSOR: pointer; FONT-WEIGHT: bold
+}
+.toolbar {
+	POSITION: relative; BACKGROUND-COLOR: #f0f7fc; WIDTH: 100%; WHITE-SPACE: nowrap
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+var smsFlag = false;
+$(document).ready(function() {
+		$(".ysbqcBtn").mouseover(function() {
+			$(".ysbqcBtn").css("background-color", "#dfecfa");
+		});
+		$(".ysbqcBtn").mouseout(function() {
+			$(".ysbqcBtn").css("background-color", "#f0f7fc");
+		});
+		$("#info_div_lsz").dialog({
+			bgiframe:       true ,
+			autoOpen : 		false,
+			modal : 		true,
+			height : 		200,
+			width : 		650,
+			closeOnEscape : false,
+			resizable : 	true,
+			draggable :     true,
+			position: 		[220,80],
+			open :   function() {
+				$(".ui-dialog-titlebar-close").hide();
+			}
+		});
+
+		
+		
+		//lpp 20180108 内蒙新加提示。
+		setTimeout(function() {
+			if(dqbz == "nm" && $("#t_shxydm").val() == ""){
+				alert("自2018年1月1日后，依据《国务院关于批转发展改革委等部门法人和其他组织统一社会信用代码制度建设总体方案的通知》（国发〔2015〕33号）精神，根据《内蒙古自治区人民政府办公厅关于印发“五证合一、一照一码”登记制度改革实施方案的通知》（内政办发〔2016〕95号），现就企业全面实行“统一社会信用代码”有关事宜公告如下 对于仍使用未加载“统一社会信用代码”营业执照申请办理相关业务的企业，内蒙古自治区国地税联合网上办税服务厅有权拒绝办理相关业务，请到对具有登记管辖权的工商部门换领加载“统一社会信用代码”的营业执照后，方可继续办理。");
+			}
+		}, 300);
+		
+	});
+
+function flushYsbqc() {
+	$.blockUI();
+	// $.ajax( {
+	// 	type : "POST",
+	//     url: "ajaxDo.do",
+	// 	data : {
+	// 		method : "flushYsbqc"
+	// 	},
+	// 	success : function(msg) {
+	// 		initNsrJbxx();
+	// 		alert("刷新成功！");
+	// 		$.unblockUI();
+	// 	}
+	// });
+}
+
+function querySpxx(yzpzzlDm,pzxh) {
+	$.blockUI();
+	setTimeout(function() {
+		var url = "ysbqc.do?method=querySpxx&yzpzzlDm=" + yzpzzlDm + "&yzpzxh="+pzxh+"&act=CXSPXX";
+		window.showModalDialog(url, window, 'dialogWidth:895px;dialogHeight:500px');
+		setTimeout(function() {
+			$.unblockUI();
+		}, 300);
+	}, 300);
+}
+var dqbz;
+function initNsrJbxx(){
+	$.blockUI();
+	// $.ajax({
+	//    type: "POST",
+	//    url: "ajaxDo.do",
+	//    dataType : "json",
+	//    async:false,
+	//    data: {
+	// 		method:"initNsrJbxx"
+	//    },
+	//    success: function(data){
+	//      dqbz = data.dqbz;
+	//      displayYsbqc(data.ysbqcList);
+	//      $("#t_nsrsbh").val(displayString(data.nsrsbh));//lpp 20151103
+	//      $("#t_shxydm").val(displayString(data.shxydm));//lpp 20151103 社会信用代码
+	//      $("#t_nsrmc").val(data.nsrmc);
+	//      $("#t_fddbrhfzrhyzxm").val(data.fddbrhfzrhyzxm);
+	//      $("#t_zcdz").val(data.zcdz);
+	//      $("#t_djzclx").val(data.djzclx);
+	//      $("#t_sjjydz").val(data.sjjydz);
+	//      $("#t_yhmc").val(data.yhmc);
+	//      $("#t_khzh").val(displayString(data.khzh));
+	//      $("#t_hymc").val(data.hymc);
+	//      $("#t_nsrzt").val(data.nsrzt);
+	//      $("#t_zgswjmc").val(data.zgswjmc);
+	//      smsFlag = data.smsFlag;
+	//      $.unblockUI();
+	//      if(data.cwbbba == "N")
+	//      	alert("尊敬的纳税人：本期没有您应申报的财务报表，建议您到所属税务机关，核对您的财务会计制度备案信息，备案信息有效后，重新进入网报系统即可显示财务报表。");
+	// 	 if(data.ysbcwbbnb == "N")
+	// 		alert("如果您的2015年财务报表年报已经报送过，或者是2016年新办纳税人，请直接点击确定关闭此提示；如果没有报送该财务报表年报请联系主管局报送。");
+	//    	 if(data.zsz_err != null)
+	//    	 	alert(data.zsz_err);
+	//    	 else if(data.zsz_msg != null)
+	// 	   	 alert(data.zsz_msg);
+	// 	 if(data.dqbz == "nm" || data.dqbz == "jxg3")
+	// 	 	initGgts();//系统公告通知
+	// 	 if(data.dqbz == "nm" && data.cwbb_msg != null)
+	// 	 	alert(data.cwbb_msg);
+	//    } 
+	// });
+}
+function displayString(str){
+	return str.length<10?str:str.substring(0,str.length-10)+"******"+str.substring(str.length-4);
+}
+function displayYsbqc(ysbqcList){
+	$('#mainTable tbody').empty();
+	var fjsfMap = {}; 
+	for ( var i = 0; i < ysbqcList.length; i++) {
+		if(ysbqcList[i].bddm!="FJSF100"){
+			var trStr = getTableTr(i, ysbqcList[i], fjsfMap);
+			$("#mainTable tbody").append(trStr);
+		}else{
+			var pzxh = ysbqcList[i].pzxh!=null?ysbqcList[i].pzxh:"null";
+			if(fjsfMap[pzxh]==null){
+				fjsfMap[pzxh] = 1;
+			}else{
+				fjsfMap[pzxh] = ++fjsfMap[pzxh];
+			}
+		}
+	}
+	for ( var i = 0; i < ysbqcList.length; i++) {
+		if(ysbqcList[i].bddm=="FJSF100"){
+			var trStr = getTableTr(i, ysbqcList[i], fjsfMap);
+			$("#mainTable tbody").append(trStr);
+		}
+	}
+}
+function getTableTr(index, jsonOb, map){
+	var tmp = "";
+	var rowspan = 1;
+	if(jsonOb.bdmc!=null && jsonOb.bdmc!=""){
+		tmp = "<tr id='"+index+"'";
+		if(jsonOb.sbzt == "申报成功"){
+			tmp = tmp +" class='e6e6e6'";
+		}
+		if(jsonOb.bddm=="FJSF100"){
+			var pzxh = jsonOb.pzxh!=null?jsonOb.pzxh:"null";
+			rowspan = map[pzxh]; 
+			map[pzxh] = -1;
+		}
+		tmp =tmp + "><td>"+jsonOb.bdmc+"</span></td>"
+			+"<td><span>"+jsonOb.sssqq+"</span></td>"
+			+"<td><span>"+jsonOb.sssqz+"</span></td>"
+			+"<td><span>"+jsonOb.sbqx+"</span></td>"
+			+"<td><span>"+jsonOb.sbzt+"</span></td>"
+			+"<td><span>"+jsonOb.sbrq+"</span></td>"
+			+"<td><span>"+jsonOb.pzxh+"</span></td>";
+			if(rowspan!=-1){
+				tmp = tmp+"<td rowspan="+rowspan+"><span>"+(jsonOb.bddm=="FJSF100" && jsonOb.ybtse < 1?"":jsonOb.ybtse)+"</span></td>"
+				tmp = tmp+"<td rowspan="+rowspan+"><span>"+jsonOb.sjje+"</span></td>";
+			}
+			tmp = tmp+"<td rowspan="+rowspan+"><span>";
+		if(jsonOb.toDo.length > 1 && rowspan!=-1){
+			if(jsonOb.toDo == "网上扣款" && jsonOb.ybtse > 1 ) {
+				tmp = tmp + "<input class=mybtn type=button name=submit value="+jsonOb.toDo+" onclick=";
+				//lpp 20160215 当前时间大于缴款期限，不允许缴款。
+				if(jsonOb.jkqx < jsonOb.dqsj){
+					if(dqbz!="nb"){
+						if(dqbz=="nm" && (jsonOb.bddm=="SB00112" || jsonOb.bddm=="SB00212" || jsonOb.bddm=="SBCM800" || jsonOb.bddm=="SBCM800"
+						|| jsonOb.bddm=="SBCA714" || jsonOb.bddm=="SBCM714" || jsonOb.bddm=="SBCA717" || jsonOb.bddm=="SBCM717" || jsonOb.bddm=="SBCA702" || jsonOb.bddm=="SBCM815" 
+						|| jsonOb.bddm=="SBCN815" || jsonOb.bddm=="SBCB715" || jsonOb.bddm.substring(0,6)=="SB0030"))
+							tmp = tmp + "\"smsCode('"+jsonOb.bddm+"','"+jsonOb.pzzldm+"','"+jsonOb.sssqq+"','"+jsonOb.sssqz+"','WSKK',true, "+smsFlag+");\"/>";
+						else
+							tmp = tmp + "\"alert('尊敬的纳税人，您的缴款期限为： "+jsonOb.jkqx+" ,当前时间已超过缴款期限，不能缴款！');\"/>";
+					}else{
+						tmp = tmp + "\"nbtx('"+jsonOb.jkqx+"','"+jsonOb.bddm+"','"+jsonOb.pzzldm+"','"+jsonOb.sssqq+"','"+jsonOb.sssqz+"');\"/>";
+					}
+				}else{
+					tmp = tmp + "\"smsCode('"+jsonOb.bddm+"','"+jsonOb.pzzldm+"','"+jsonOb.sssqq+"','"+jsonOb.sssqz+"','WSKK',true, "+smsFlag+");\"/>";
+				}
+				
+			}else if(jsonOb.toDo == "查询扣款结果"){
+				tmp = tmp + "<input class=mybtn type=button name=submit value="+jsonOb.toDo+" onclick=";
+				tmp = tmp + "\"doNext('"+jsonOb.bddm+"','"+jsonOb.pzzldm+"','"+jsonOb.sssqq+"','"+jsonOb.sssqz+"','CXKKJG',true);\"/>";
+			}else if(jsonOb.toDo == "查看税票信息"){
+				if(jsonOb.bddm=="FJSF100" || dqbz=="nb"){
+					tmp = tmp + "扣款成功";
+				}else{
+					tmp = tmp + "<input class=mybtn type=button name=submit value="+jsonOb.toDo+" onclick=";
+					tmp = tmp + "\"querySpxx('"+jsonOb.pzzldm+"','"+jsonOb.pzxh+"');\"/>";
+				}
+			}else if(jsonOb.toDo == "查看流水账"){
+				tmp = tmp + "<input class=mybtn type=button name=submit value="+jsonOb.toDo+" onclick=";
+				tmp = tmp + "\"queryLsz('"+jsonOb.lszList+"');\"/>";
+			}
+		}
+		tmp = tmp + "</span></td></tr>";
+		return tmp;
+	}
+}
+function nbtx(jkqx,bddm,pzzldm,sssqq,sssqz){
+	jConfirm("<font color='red'>尊敬的纳税人，您的缴款期限为："+jkqx+",当前时间已超过缴款期限，已超过限缴日期，系统会自动加计滞纳金，是否继续？</font>","操作提示", function (_value) {
+		if(_value){
+			smsCode(bddm,pzzldm,sssqq,sssqz,'WSKK',true,smsFlag);
+		}
+	});
+}
+//查询流水
+function queryLsz(lsz) {
+	//alert(lsz);
+	$("#info_div_lsz").dialog('close');
+	$("#lsz").html(lsz);
+	$('#info_div_lsz').dialog('open');
+	$('#info_div_lsz').dialog('moveToTop');
+}
+//格局化日期：yyyyMMdd 
+function formatDate(date) { 
+	var myyear = date.getFullYear(); 
+	var mymonth = date.getMonth()+1; 
+	var myweekday = date.getDate(); 
+	
+	if(mymonth < 10){ 
+	mymonth = "0" + mymonth; 
+	} 
+	if(myweekday < 10){ 
+	myweekday = "0" + myweekday; 
+	} 
+	return (myyear+""+mymonth + "" + myweekday); 
+} 
+//////////////////////////////////////////////////////////////////////////
+//系统通知初始化
+
+
+
+
+
+function initGgts() {
+	$("#popTitle tbody").empty();
+	$.blockUI();
+	// $.ajax( {
+	// 	type : "POST",
+	// 	url :  "ggts.do",
+	// 	dataType : "json",
+	// 	data : {
+	// 		method : "initGgts"
+	// 	},success : function(data) {
+	// 		if(data.GgtsInfo.length>0){
+	// 			new Pop();//弹窗
+	// 			displayGgts(data.GgtsInfo);
+	// 		}
+	// 		$.unblockUI(); 
+	// 	}
+	// });
+}
+
+function displayGgts(GgtsList){
+	$("#popTitle tbody").empty();
+	for ( var i = 0; i < GgtsList.length; i++) {
+		var trStr = getTable(i,GgtsList[i]);
+		$("#popTitle tbody").append(trStr);
+	}
+}
+
+function getTable(index , gsInfo) {
+		var tmp = "<tr><td width='60%'>"
+				+ gsInfo.title
+				+ "</td><td width='20%'>"
+				+ gsInfo.pubdate
+				+ "</td><td width='20%'><a href='javascript:queryNotice("
+				+ index
+				+ ")'>查看</a></td></tr>";
+		return tmp;
+}
+//系统通知弹出框
+function queryNotice(index) {
+	$.blockUI();
+	setTimeout(function() {
+		var url = "ggts.do?method=queryNotice&index=" + index;
+		window.showModalDialog(url, window, 'dialogWidth:600px;dialogHeight:400px');
+		setTimeout(function() {
+			$.unblockUI();
+		}, 300);
+	}, 300);
+}
+function moreNotice(){
+	$("#nav",top.document)[0].contentWindow.clickTree("48");
+}
+
+$(function(){
+	(function(){
+	var user = localStorage.getItem("user");
+
+	
+	var data1 = {
+		ipt1:"15022******7349",
+		ipt2:"91150221******349D",
+		ipt3:"包头市新兴盛能源有限责任公司",
+		ipt4:"吴国栋",
+		ipt5:"土右旗萨拉齐镇东二环路西侧",
+		ipt6:"私营有限责任公司",
+		ipt7:"土右旗萨拉齐镇东二环路西侧",
+		ipt8:"中国建设银行股份有限公司内蒙古土默特右旗支行",
+		ipt9:"1500171740******4777",
+		ipt10:"天然气生产和供应业",
+		ipt11:"正常",
+		ipt12:"内蒙古土默特右旗国家税务局"
+	};
+	var data2 = {
+		ipt1:"15292******1781",
+		ipt2:"91152900******7818",
+		ipt3:"内蒙古国能天然气股份有限公司",
+		ipt4:"沈勇",
+		ipt5:"阿拉善盟孪井滩示范区",
+		ipt6:"非国有控股非上市企业",
+		ipt7:"内蒙古自治区阿拉善盟孪井滩示范区生态工业园区",
+		ipt8:"中国农业银行股份有限公司阿拉善左旗支行",
+		ipt9:"0546510******5988",
+		ipt10:"天然气生产和供应业",
+		ipt11:"正常",
+		ipt12:"阿拉善盟孪井滩生态移民示范区国家税务局"
+	}
+	var data = user == "1"?data1:data2;
+	for(var i = 1;i<13;i++){
+		$('.ipt'+i).val(data['ipt'+i])
+	}
+})()
+})
+
+</SCRIPT>
+</HEAD>
+<BODY style="MARGIN: 0px auto">
+<DIV>
+<TABLE style="MARGIN-TOP: 5px; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 5px" id="table_c" border="0" cellSpacing="0" cellPadding="0">
+<TBODY>
+<TR style="LINE-HEIGHT: 25px; HEIGHT: 25px" class=title_t>
+<TD><SPAN>企业应申报清册信息</SPAN> </TD></TR>
+<TR class="toolbar" align="center">
+<TD>
+<TABLE class="ysbqcBtn" jQuery18306009307743275041="6">
+<TBODY>
+<TR onclick="flushYsbqc()";>
+<TD>&nbsp; <IMG src="../resources/images/Toolbar/new.gif"> </TD>
+<TD><FONT color=red>本期申报信息查询</FONT> </TD></TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD>
+<TABLE style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 10px" id="mainTable" class="Results_t" border=0 cellSpacing=0 cellPadding=0 width="100%" sizcache05705919691182779="25 34 6" sizset="true">
+<THEAD>
+<TR>
+<TD>申报表名称 </TD>
+<TD>所属期起 </TD>
+<TD>所属期止 </TD>
+<TD>申报期限 </TD>
+<TD>报表状态 </TD>
+<TD>申报日期 </TD>
+<TD>凭证序号 </TD>
+<TD>应补退税额 </TD>
+<TD>实缴金额 </TD>
+<TD>&nbsp;</TD></TR></THEAD>
+<TBODY>
+<TR id="0" class="e6e6e6">
+<TD>增值税申报表（营改增）</SPAN></TD>
+<TD><SPAN>20180301</SPAN></TD>
+<TD><SPAN>20180331</SPAN></TD>
+<TD><SPAN>20180418</SPAN></TD>
+<TD><SPAN>申报成功</SPAN></TD>
+<TD><SPAN>2018-04-10</SPAN></TD>
+<TD><SPAN>10011518000006373172</SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD></TR>
+<TR id="1" class="e6e6e6">
+<TD>2015版所得税月(季)度查账征收(A类)</SPAN></TD>
+<TD><SPAN>20180101</SPAN></TD>
+<TD><SPAN>20180331</SPAN></TD>
+<TD><SPAN>20180418</SPAN></TD>
+<TD><SPAN>申报成功</SPAN></TD>
+<TD><SPAN>2018-04-04</SPAN></TD>
+<TD><SPAN>10011518000005731178</SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD></TR>
+<TR id="2">
+<TD>2016版关联关系往来表</SPAN></TD>
+<TD><SPAN>20170101</SPAN></TD>
+<TD><SPAN>20171231</SPAN></TD>
+<TD><SPAN>20180601</SPAN></TD>
+<TD><SPAN>未申报</SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD></TR>
+<TR id="3">
+<TD>2017版所得税年报查账征收(A类)</SPAN></TD>
+<TD><SPAN>20170101</SPAN></TD>
+<TD><SPAN>20171231</SPAN></TD>
+<TD><SPAN>20180601</SPAN></TD>
+<TD><SPAN>未申报</SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD></TR>
+<TR id="4">
+<TD>财务报表（小企业）</SPAN></TD>
+<TD><SPAN>20180301</SPAN></TD>
+<TD><SPAN>20180331</SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN>未申报</SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD></TR>
+<TR id="5" class="e6e6e6">
+<TD>财务报表年报（小企业）</SPAN></TD>
+<TD><SPAN>20170101</SPAN></TD>
+<TD><SPAN>20171231</SPAN></TD>
+<TD><SPAN>20180601</SPAN></TD>
+<TD><SPAN>申报成功</SPAN></TD>
+<TD><SPAN>2018-04-10</SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD>
+<TD><SPAN></SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV><!-- &&&&&&&&&&&&&&&&&&&&& -->
+<TABLE style="MARGIN-TOP: 5px; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 5px" id="table_c" border=0 cellSpacing=1 cellPadding=0>
+<TBODY>
+<TR class="title_t">
+<TD width="15%">企业纳税申报信息 </TD></TR>
+<TR>
+<TD>
+<TABLE style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 10px" class=table_list border=0 cellSpacing=1 cellPadding=0>
+<TBODY>
+<TR>
+<TD class="indent" align="right">纳税人识别号： </TD>
+<TD class="indent" align="left"><INPUT id="t_nsrsbh" class="contact_input ipt1" disabled name="t_nsrsbh" value=""> </TD>
+<TD class="indent" align="right">社会信用代码： </TD>
+<TD class="indent" align="left"><INPUT id="t_shxydm" class="contact_input ipt2" disabled name="t_shxydm" value=""> </TD></TR>
+<TR>
+<TD class="indent" align="right">纳税人名称： </TD>
+<TD class="indent" align=left><INPUT id="t_nsrmc" class="contact_input ipt3" disabled name="t_nsrmc" value=""> </TD>
+<TD class="indent" align="right">法人名称： </TD>
+<TD class="indent" align="left"><INPUT id="t_fddbrhfzrhyzxm" class="contact_input ipt4" disabled name="t_fddbrhfzrhyzxm" value=""> </TD></TR>
+<TR>
+<TD class="indent" align="right">注册地址： </TD>
+<TD class="indent" align="left"><INPUT id="t_zcdz" class="contact_input ipt5" disabled name="t_zcdz" value=""> </TD>
+<TD class="indent" align="right">登记注册类型： </TD>
+<TD class="indent" align="left"><INPUT id="t_djzclx" class="contact_input ipt6" disabled name="t_djzclx" value=""> </TD></TR>
+<TR>
+<TD class="indent" align="right">营业地址： </TD>
+<TD class="indent" align="left"><INPUT id="t_sjjydz" class="contact_input ipt7" disabled name="t_sjjydz" value=""> </TD>
+<TD class="indent" align="right">开户银行： </TD>
+<TD class="indent" align="left"><INPUT id="t_yhmc" class="contact_input ipt8" disabled name="t_yhmc" value=""> </TD></TR>
+<TR>
+<TD class="indent" align="right">开户银行账号： </TD>
+<TD class="indent" align="left"><INPUT id="t_khzh" class="contact_input ipt9" disabled name="t_khzh" value=""> </TD>
+<TD class="indent" align="right">所属行业： </TD>
+<TD class="indent" align="left"><INPUT id="t_hymc" class="contact_input ipt10" disabled name="t_hymc" value=""> </TD></TR>
+<TR>
+<TD class="indent" align="right">纳税人状态： </TD>
+<TD class="indent" align="left"><INPUT id="t_nsrzt" class="contact_input ipt11" disabled name="t_nsrzt" value=""> </TD>
+<TD class="indent" align="right">主管税务机关： </TD>
+<TD class="indent" align="left"><INPUT id="t_zgswjmc" class="contact_input ipt12" disabled name="t_zgswjmc" value=""> </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- pop系统通知弹框 -->
+<DIV style="DISPLAY: none" id="pop">
+<DIV id="popHead"><A id="popClose" title=关闭>关闭</A> 
+<H2>最新公告</H2></DIV>
+<DIV id="popContent">
+<TABLE id="popTitle" width="100%" sizcache05705919691182779="28 34 7" sizset="true">
+<THEAD>
+<TR>
+<TH width="60%" align=left>标题</TH>
+<TH width="20%" align=left>发布时间</TH>
+<TH width="20%" align=left>操作</TH></TR></THEAD>
+<TBODY></TBODY></TABLE><!-- <p id="popMore">
+					<input type=button name=submit value="查看更多»" target="_blank" onclick="moreNotice()"/>
+				</p> --></DIV></DIV>
+<DIV style="POSITION: absolute; DISPLAY: none" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-draggable ui-resizable" role=dialog tabIndex=-1 aria-labelledby=ui-id-1 aria-describedby=info_div_lsz sizcache05705919691182779="17 30 15" jQuery18306009307743275041="11" sizset="true">
+<DIV class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" jQuery18306009307743275041="15"><SPAN id="ui-id-1" class=ui-dialog-title>流水信息</SPAN><BUTTON aria-disabled=false class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" title=close role=button jQuery18306009307743275041="16"><SPAN class="ui-button-icon-primary ui-icon ui-icon-closethick"></SPAN><SPAN class=ui-button-text>close</SPAN></BUTTON></DIV>
+<DIV style="BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; BACKGROUND: #ffffff; BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid" id="info_div_lsz" class="ui-dialog-content ui-widget-content" jQuery18306009307743275041="9">
+<DIV style="WIDTH: 100%; HEIGHT: 100%" id="info_div_lszContent">
+<CENTER>
+<TABLE style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 10px" class="table_list" border=0 cellSpacing=1 cellPadding=0>
+<TBODY>
+<TR><!-- <td align="right" class="indent" style="width: 40%">
+								详细信息：
+							</td> -->
+<TD style="LINE-HEIGHT: 30px; PADDING-LEFT: 20px; HEIGHT: 90px" id=lsz class=indent align=left></TD></TR>
+<TR>
+<TD style="HEIGHT: 30px" class="indent" align="right"><INPUT class="btn btn-login" onclick="javascript:$('#info_div_lsz').dialog('close');" value=关闭 type="button"> </TD></TR></TBODY></TABLE></CENTER></DIV></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-n" jQuery18306009307743275041="34"></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-e" jQuery18306009307743275041="36"></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-s" jQuery18306009307743275041="37"></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-w" jQuery18306009307743275041="38"></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" jQuery18306009307743275041="39"></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-sw" jQuery18306009307743275041="40"></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-ne" jQuery18306009307743275041="41"></DIV>
+<DIV style="Z-INDEX: 90" class="ui-resizable-handle ui-resizable-nw" jQuery18306009307743275041="42"></DIV></DIV></BODY>
+</html>

@@ -1,0 +1,563 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "/www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dt d">
+<html xmlns="/www.w3.org/1999/xhtml">
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="内蒙电子税务局,国税地税综合办公,便民办税，春风行动，深入贯彻国地税合作" />
+<meta name="description" content="国地税共建电子税务生态，税企共享诚信纳税平台" />
+<title>内蒙古自治区国地税联合网上办税服务平台</title>
+
+<title>常见问题</title>
+<script language="javascript" src="/www.nm12366.net:80/js/jquery-1.8.3.min.js"></script> 
+<link rel="shortcut icon" href="/www.nm12366.net:80/images/favicon.ico" type="images/x-icon"/>
+<script type="text/javascript" src="/www.nm12366.net:80/js/formcheck.js"></script>
+<link href="/www.nm12366.net:80/resources/dzswj/mhgb/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/www.nm12366.net:80/resources/dzswj/help.css" type="text/css"></link>
+<script type="text/javascript" src="/www.nm12366.net:80/js/layer/layer.js"></script>
+<script type="text/javascript" src="/www.nm12366.net:80/js/mhgb/common.js"></script>
+
+</head>
+<body style="background-color:transparent">
+<!-- 公共头部 -->
+
+		
+
+<link href="/www.nm12366.net:80/resources/dzswj/lhwteq/style.css" rel="stylesheet" type="text/css" />
+
+<!--顶部-->
+<div class="topbg">
+	<div class="top">欢迎进入内蒙古自治区国地税联合网上办税服务厅！</div>
+</div>
+<!--/顶部-->
+<!--logo和导航一排-->
+<div class="logonavbg">
+    <div class="logonav">
+        <div class="logo"><a href="/www.nm12366.net:80/org/index?org_id=1&templete=new"><img src="/www.nm12366.net:80/images/lhwteq/logo.png" /></a><i><a href="/www.nm12366.net:80/org/index?org_id=1&templete=new"><img src="/www.nm12366.net:80/images/lhwteq/logozi.png" /></a></i></div>
+        <div class="nav">
+            <ul>
+                <li><a href="/www.nm12366.net:80/foot/spxz?templete=new"><img src="/www.nm12366.net:80/images/lhwteq/nav_03.png">操作视频下载</a></li>
+                <li><a href="/www.nm12366.net:80/foot/cjwt?templete=new"><img src="/www.nm12366.net:80/images/lhwteq/nav_03.png">操作手册下载</a></li>
+
+                <li><a href="/www.nm12366.net:80/foot/sjfw?templete=new"><img src="/www.nm12366.net:80/images/lhwteq/nav_05.png">APP下载</a></li>
+                <li><a href="/www.nm-n-tax.gov.cn/ewebeditor/uploadfile/2017/07/12/20170712164310464.rar"><img src="/www.nm12366.net:80/images/lhwteq/fpzs.png">发票助手下载</a></li>
+				<li><a href="javascript:void(0);" onclick="window.location.href='/www.nm12366.net:80/jsp/sqwts.docx'"><img src="/www.nm12366.net:80/images/lhwteq/nav_03.png">实名办税授权委托书下载</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/logo和导航一排-->
+
+
+<!-- /公共头部 -->
+<div id="bg_div">
+<div class="help_center" style="background:none;">
+	<div class="help_content">
+    	<div class="help_top">
+       		<div class="location">当前位置：
+			
+       			<a href="/www.nm12366.net:80/org/index?templete=new">
+       		首页</a> &gt; 常见问题</div>
+        </div>
+         <div class="list_tab">
+            <div class="tabs_con" id="g5_group_1" >
+               <div class="ptgnjs">
+                   <h2>【内蒙古自治区国地税联合网上办税服务厅】简介、操作手册下载</h2>
+                   <ul>
+                        <li><a href="/pan.baidu.com/s/1hr6XMNa" target="_blank" ><img src="/www.nm12366.net:80/images/dzswj/icon_01.png" />系统简介下载</a></li>
+                        <li><a href="https://pan.baidu.com/s/1uvb4rWpB9lHQ1GuaKHGltw" target="_blank" ><img src="/www.nm12366.net:80/images/dzswj/icon_01.png" />系统操作手册下载</a></li>
+                        <li><a href="/pan.baidu.com/s/1gfw0EJp" target="_blank" ><img src="/www.nm12366.net:80/images/dzswj/icon_01.png" />常见问题文档下载</a></li>
+                        <div class="clearfix"></div>
+                   </ul>
+               </div>
+               <div class="ptgnjs_right">
+               		<h5><img src="/www.nm12366.net:80/images/dzswj/cjwt_bg.png" />常见问题</h5>
+                    <ul>
+                        <li>在【内蒙古自治区国地税联合网上办税服务厅】进入“国税网报”和之前直接用“国税网报”系统有什么区别？
+                        	<div class="details">
+                        		<p>
+                                	答：您好！通过【内蒙古自治区国地税联合网上办税服务厅】进入"国税网报"可以实现以下功能：<br/>
+                                    <p>1、财务报表地税一次报送，避免了了国税、地税分别报送，降低了报送工作量；</p>
+                                    <p>2、主附税国地税共享，主税申报后，可方便附税的申报（网报系统会有数据提示）；</p>
+                                    <p>3、以后随着“平台”的不断建设，还会陆续推出更多国地税数据分享的业务，给纳税人提供更多方便、快捷的应用。</p>
+                                </p>
+							 </div>
+                        </li>
+                        <li>为什么总提示我“此业务需要绑定纳税人身份，请在个人中心进行身份认证”？
+                        	<div class="details">
+                                <p>
+                                    答：您好！此提示表示您需要先“绑定纳税人身份”，才能进行操作，具体绑定操作如下：
+                                     点击如下图所示左侧导航的“个人中心”按钮，进入个人中心
+                                    <img src="/www.nm12366.net:80/images/dzswj/cjwt_tips05.png" /></p>
+                                    <p>在下图所示个人中心页面中，点击红框里的“纳税人身份认证”打开纳税人身份信息显示页面；
+                                    <img src="/www.nm12366.net:80/images/dzswj/cjwt_tips04.png" /></p>
+                                    <p>在下图所示纳税人身份信息显示页面中，点击“新增纳税人身份”，进入填写页面：
+                                    <img src="/www.nm12366.net:80/images/dzswj/cjwt_tips03.png" /></p>
+                                    <p>在下图所示纳税人身份信息填写页，如果是国地共管户，选择“是”，如下图所示：
+                                    <img src="/www.nm12366.net:80/images/dzswj/cjwt_tips02.png" /></p>
+                                    <p>如果非国地共管户点击否，界面如下图所示：
+                                    <img src="/www.nm12366.net:80/images/dzswj/cjwt_tips01.png" /></p>
+                                    <p>根据提示信息进行填写即可完成纳税人身份绑定；
+                                    【注意事项】
+                                    绑定身份时，会校验纳税人信息，校验规则为该纳税人信息需在金税三期系统中注册过的开业户。</p>
+                                </p>
+                            </div>
+                        </li>
+                        <li>为什么登录进入网报IE检查情况界面只有第三项通过？
+                        	<div class="details">
+                        	<p><img src="/www.nm12366.net:80/images/dzswj/wb_tip.png" /></p>
+                                <p>
+                                    答：您好，只有第三项通过时，需要重新运行首页环境检测里的控件检测安装包（之前下载好的），运行完之后，刷新IE情况检查界面即可。
+                                    <img src="/www.nm12366.net:80/images/dzswj/wb_tip1.png" /></p>
+                                    <p>【注意事项】运行时请关闭浏览器，如果运行后IE情况检查依旧只有第三项通过，这时浏览器其实已经设置好，需要手动添加到可信站点，才能应用已设置好的安全级别。
+								设置可信用站点：</p>
+                                    <p>1、在浏览器的工具里选择Internet选项，打开之后在“安全”下选择“受信任的站点”，如下图所示：
+                                     <img src="/www.nm12366.net:80/images/dzswj/wb_tip2.png" /></br>
+                                      <img src="/www.nm12366.net:80/images/dzswj/wb_tip3.png" /></p>
+                                    <p>2、添加站点时注意的是：将系统红色区域内的勾选掉，才可以添加站点，否则添加不上。
+                                     <img src="/www.nm12366.net:80/images/dzswj/wb_tip4.png" /></p>
+                                     <p>3、点击添加，然后关闭，然后确定，再到刚才的界面刷新一下，全部显示绿色，通过后直接进入网报系统。</p>
+                                     <p><img src="/www.nm12366.net:80/images/dzswj/wb_tip5.png" /></p>
+                                </p>
+                            </div>
+                        </li>
+                         <li>为什么提示VPDN已连接，但未进行跳转？
+                        	<div class="details">
+                        		<p><img src="/www.nm12366.net:80/images/dzswj/vpdn_tip1.png" /></p>
+                                <p>
+                                	答：您好，如果出现以上情况请将开启的杀毒软件（主要是电脑安全管家）全部关闭，然后刷新页面；或者可以通过360浏览器，打开工具——广告过滤，将开启的广告过滤关闭，然后刷新页面。
+                                </p>
+                            </div>
+                          </li>
+                         <li>为什么进行国税网报时小助手都已经安装完毕，安全检查仍有未通过项目？
+                        	<div class="details">
+                                <p>
+                                	答：您好，这时打开浏览器的工具，里面的Internet选项，里面的“安全”，打开可信任站点，取消对该区域中的所有站点要求服务器验证（https:）的勾选，再添加可信任站点116.112.10.170和116.112.10.166
+                                </p>
+                                <p>
+                                	<img src="/www.nm12366.net:80/images/dzswj/aq_tip1.png" /></br>
+                                	<img src="/www.nm12366.net:80/images/dzswj/aq_tip2.png" />
+                                </p>
+                            </div>
+                          </li>
+                         <li>为什么在浏览器的地址栏内输入网址却打不开网页，或者申报页面不跳转？
+                        	<div class="details">
+                                <p>
+                                	答：您好，如果在清除浏览器缓存，重置浏览器，并关闭电脑杀毒软件，安全软件等操作之后还是无法打开网页，此时需要用电脑管家进行IE浏览器修复的修复。
+                                </p>
+                            </div>
+                          </li>
+                         <li>为什么纳税人使用360浏览器总是提示下载插件或申报时页面不跳转等问题？
+                        	<div class="details">
+                                <p>
+                                	答：您好，建议使用ie8及以上版本的浏览器，如果使用360浏览器需要将浏览器的极速模式切换成兼容模式(地址栏旁边的闪电图标)，再将360地址拦截关闭掉。
+                                </p>
+                                <p>
+                                	<img src="/www.nm12366.net:80/images/dzswj/360_tip.png" />
+                                </p>
+                            </div>
+                          </li>
+                         <li>为什么利用Ca盘登录国税网报点确定后显示无法显示此页？
+                        	<div class="details">
+                                <p>
+                                	答：您好，此时需要打开360安全卫士-人工服务-搜索ie浏览器崩溃-立即修复，然后刷新页面即可。
+                                </p>
+                            </div>
+                          </li>
+                    </ul>
+               </div>
+               <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+   
+
+<script type="text/javascript" src="/www.nm12366.net:80/js/mhgb/common.js"></script>
+<script type="text/javascript">
+$(function(){
+	//左侧导航栏 咨询助手效果
+	var len=$('.qie_roll').width();
+	var wall=0;
+	/*气泡提示效果===start*/
+	$(".kjmenu ul li").hover(function(){
+		$(".qptx",this).show();
+	});
+	$(".kjmenu ul li").mouseleave(function(){
+		$(".qptx",this).hide();
+	});
+	/*气泡提示效果===end*/
+	/*左侧导航鼠标移入移出的效果==start*/
+	$('.qie_text').each(function(){
+		var b=$(this).find('.qie_roll').length;
+		wall=len*b;	
+		$(this).width(wall);
+	})
+	$('.qie_right').click(function(){
+		var sz=$(this).parents('.remind').find('.qie_roll').length;
+		var wh=len*(sz-2);
+		var wid=len*(sz-1);
+		$(this).parents('.remind').find('.qie_left').removeClass('qie_left1');
+		var l=$(this).parents('.remind').find('.qie_text').css('left');
+		if(Math.abs(parseInt(l))>=wh){
+			$(this).addClass('qie_right1');
+			$(this).parents('.remind').find('.qie_text').animate({'left':'-'+wid+'px'})
+		}else{
+			$(this).parents('.remind').find('.qie_text').animate({'left':'-='+len+'px'})
+		}
+	})
+	$('.qie_left').click(function(){
+		$(this).parents('.remind').find('.qie_right').removeClass('qie_right1');
+		var l=$(this).parents('.remind').find('.qie_text').css('left');
+		var wh=len*(-1);
+		if(l>=wh+"px"){
+			$(this).addClass('qie_left1');
+			$(this).parents('.remind').find('.qie_text').animate({'left':'0px'})
+		}else{
+			$(this).parents('.remind').find('.qie_text').animate({'left':'+='+len+'px'})
+		}
+	})
+	/*左侧导航鼠标移入移出的效果==end*/
+});
+/**保存留言、举报信息**/
+function saveReport(){
+	var title = $("#title").val();
+	if(title == "请输入标题(必填)"){
+		title = "";
+	}
+	if(null==title || ""==title){
+		alert("标题不可为空",8);
+		$("#title").focus();
+		return;
+	}
+	if(len(title)>100){
+		alert("标题长度不可超过50个汉字",8);
+		$("#title").focus();
+		return;
+	}
+	var content = $("#content").val();
+	if(content == "请在此输入留言内容，我们会尽快与您联系。(必填)"){
+		content = "";
+	}
+	if(null==content || ""==content){
+		alert("内容不可为空",8);
+		$("#content").focus();
+		return;
+	}
+	if(len(content)>1000){
+		alert("内容长度不可超过500个汉字",8);
+		$("#content").focus();
+		return;
+	}
+	var username = $("#username").val();
+	if(username == "姓名"){
+		username = "";
+	}
+	var mobile = $("#mobile").val();
+	if(mobile == "电话"){
+		mobile = "";
+	}
+	if(null!=mobile && ''!=mobile){
+		if(isNumber(mobile) && cTrim(mobile,2).length==11){
+			//var regu =/^\d[1]{9}$/; 
+			var regu =/^1[\d]{10}$/;
+			if (!regu.test(mobile)) { 
+				alert("联系方式格式错误！",8);
+				return;
+			}
+		}else{
+			//var regMov=/(^[0-9]{3,4}\-[0-9]{3,9}$)|(^[0-9]{3,4}\-[0-9]{3,4}\-[0-9]{3,5}$)|(^[0-9]{3,9}$)|(^\([0-9]{3,4}\)[0-9]{3,9}$)|(^0{0,1}13[0-9]{9}$)/;  //电话号码 //电话号码   /^([0-9]{3}-?[0-9]{8})|([0-9]{4}-?[0-9]{8}$)/
+			var regMov=/\d{3}-\d{8}|\d{4}-\d{7}/;
+  			if(!regMov.test(mobile)){
+				alert("联系方式格式错误！",8);
+				return;
+			}
+		}
+	}
+	$.ajax({
+	    url:"/www.nm12366.net:80/foot/saveReport",
+	    async: false,
+	    cache: false, 
+	    type:'POST',
+	    data:{"title":title,"content":content,"username":username,"mobile":mobile},
+	      	dataType: "xml",
+	      	success: function(msg) {
+			var code=$(msg).find("code").text();
+			var message=$(msg).find("message").text();
+			if("0000"==code){
+				layer.alert("发送成功，若您留下了联系方式，管理员会在处理之后给予您回复。感谢您的支持！",1,function(){
+					window.location.reload();
+					});
+			}else{
+				alert(message);
+			}
+	       },
+	       error:function(data){
+			//alert("服务器繁忙，请稍候重试。");
+	    }
+	});
+}
+
+function showLinkLists(showDivId){
+	 $.ajax({
+			url: '/www.nm12366.net:80/org/sLink',
+			data:"opt_flag=qry&if_flag=one&org_id=31500000000&type=1&scope=2&islink=1",
+			type:'POST',
+			dataType :"xml",
+			success:function(msg){
+				var code = $(msg).find("code").text();
+				var message = $(msg).find("message").text();
+				if("0000"==code){//接口调用成功
+					var htmlStr = "";
+					var htmlStr_left = "";
+					var link_l=$(msg).find("Link").length;
+					$(msg).find("Link").each(function(i){
+						var id=$(this).find("id").text();
+						var name=$(this).find("name").text();
+						var photo=$(this).find("photo").text();
+						var intro=$(this).find("intro").text();
+						var linkns=name.split("/");
+						if(linkns&&linkns.length==2){
+							if(user_type=="2"){
+								name=linkns[0];											
+							}else{
+								name=linkns[1];
+							}
+						}
+						var photo_url="";
+						if(null!=photo && ""!=photo){
+							if(photo.indexOf("http") > -1){
+								if(photo.indexOf("UploadModule")>-1){
+									photo_url=photo.substr(photo.indexOf("UploadModule/uploads")+21,photo.length);
+									photo_url ="/182.18.63.156:28007/UploadModule/uploads/"+photo_url;
+								}else{
+									photo_url =photo;
+								}
+							}else{
+								photo_url ="/182.18.63.156:28007/UploadModule/uploads/"+photo;
+							}
+						}else{
+								photo_url="/www.nm12366.net:80/images/nmgs/icon_zx.png";
+						}
+						
+						htmlStr+="<a href=\"javascript:void(0);\" onclick=\"startZx();\">"+name+"</a>";
+						if(((i+1)%10)==1){
+							htmlStr_left+="<ul class=\"qie_con\"><li><a href=\"javascript:void(0)\" onclick=\"startZx();\">"+name+"</a></li>";
+						}else if(((i+1)%10)==0){
+							htmlStr_left+="<li><a href=\"javascript:void(0)\" onclick=\"startZx();\">"+name+"</a></li></ul>";
+						}else{
+							htmlStr_left+="<li><a href=\"javascript:void(0)\" onclick=\"startZx();\">"+name+"</a></li>";
+						}
+					});
+					if(null!=htmlStr && ''!=htmlStr){
+						$("#"+showDivId).html(htmlStr);
+					}else{
+						$("#"+showDivId).html(htmlStr);
+					}
+					if(null==htmlStr || ''==htmlStr){
+						$("#links_left").remove();
+					}else{
+						if(link_l%10==0){
+						}else{
+							htmlStr+="</ul>";
+						}
+						$("#links_left").html(htmlStr_left);
+						left_link_qiehuan();
+					}
+				}else{
+					//alert("服务链出现异常："+message);
+				}
+			}
+		});
+	}
+
+function left_link_qiehuan(){
+	 var len=$('.qie_con').width();
+       var wall=0;
+       $('.zxzs_con').each(function(){
+           var b=$(this).find('.qie_con').length;
+           wall=len*b; 
+           $(this).width(wall);
+       })
+       $('.zxzs_qie_right').click(function(){
+               var sz=$(this).parents('.zxzs_text').find('.qie_con').length;
+               var wh=len*(sz-2);
+               var wid=len*(sz-1);
+               $(this).parents('.zxzs_text').find('.zxzs_qie_left').removeClass('zxzs_qie_left1');
+               var l=$(this).parents('.zxzs_text').find('.zxzs_con').css('left');
+               if(Math.abs(parseInt(l))>=wh){
+                   $(this).addClass('zxzs_qie_right1');
+                   $(this).parents('.zxzs_text').find('.zxzs_con').animate({'left':'-'+wid+'px'})
+               }else{
+                   $(this).parents('.zxzs_text').find('.zxzs_con').animate({'left':'-='+len+'px'})
+               }
+           })
+       $('.zxzs_qie_left').click(function(){
+               $(this).parents('.zxzs_text').find('.zxzs_qie_right').removeClass('zxzs_qie_right1');
+               var l=$(this).parents('.zxzs_text').find('.zxzs_con').css('left');
+               var wh=len*(-1);
+               if(l>=wh+"px"){
+                   $(this).addClass('zxzs_qie_left1');
+                   $(this).parents('.zxzs_text').find('.zxzs_con').animate({'left':'0px'})
+               }else{
+                   $(this).parents('.zxzs_text').find('.zxzs_con').animate({'left':'+='+len+'px'})
+               }
+           });
+	}
+
+function startZx(){
+	alert("请先登陆您的账号！");
+	return;
+}
+</script>
+ <!--左侧浮动块-->
+<div class="zcfix kjmenu">
+	<ul>
+		<li class="kjnavt">
+			<a href="#" class="zc_ys1">咨询助手</a>
+            <div class="qptx" style="display: none;">
+				<div class="qptx_arr"></div>
+				<div class="remind">
+					<ul>
+                        <li class="sildbeltit">咨询助手
+                            <div class="qiehuan">
+                                <div class="qie_left qie_left1"></div>
+                                  <div class="qie_right"></div>
+                                  <div class="clearfix"></div>
+                              </div> 
+                          </li>
+                      </ul>
+                      <div class="qie_text" id="links_left">
+                            
+                      </div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="/www.nm12366.net:80/foot/xszy" target="_blank"  class="zc_ys2">新手指引</a>
+		</li>
+    	<li>
+    		<a href="javascript:show();" class="zc_ys3">在线留言</a>
+    	</li>
+    	<li>
+    		<a href="javascript:void(0);" onclick="window.location.href='/www.nm12366.net:80/foot/cjwt?templete=new'" class="zc_ys4">常见问题</a>
+    	</li>
+	</ul>
+</div>
+<!--在线留言-->
+<div class="zxmsgbg" id="zxmsgbg"></div>
+<div class="zxmsg" id="zxmsg">
+	<h1><a href="javascript: hid();"></a>在线留言</h1>
+    <div class="zxmsg_con">
+    	<input id="title" type="text" value="请输入标题(必填)" class="msg_tit" onfocus="$(this).val('');" onblur="if(value=='')$(this).val('请输入标题(必填)');"/>
+        <textarea id="content" onfocus="$(this).text('');" onblur="if(value=='')$(this).text('请在此输入留言内容，我们会尽快与您联系。(必填)');">请在此输入留言内容，我们会尽快与您联系。(必填)</textarea>
+        <ul>
+            <li><label><img src="/www.nm12366.net:80/images/mhgb/zxly_01.png" /></label><input id="username" type="text" value="姓名" onfocus="$(this).val('');" onblur="if(value=='')$(this).val('姓名');" /></li>
+            <li><label><img src="/www.nm12366.net:80/images/mhgb/zxly_02.png" /></label><input id="mobile" type="text" value="电话" onfocus="$(this).val('');" onblur="if(value=='')$(this).val('电话');"/></li>
+            <li class="zxly_ts"><span style="color:#d10000;">如：0471-1234567或13800000000</span></li>
+            <li class="zxmsg_btn"><a href="javascript:void(0);" onclick="saveReport();">发送</a></li>
+        </ul>
+    </div>
+</div>
+<!--/在线留言-->
+<script type="text/javascript">showLinkLists();</script> 
+
+
+
+
+<style type="text/css">
+/*footer_dzswj*/
+.footer_dzswj{
+    width:100%;
+    text-align: center;
+    position:relative;
+    padding-top:6px;
+    height:65px;
+}
+.footer_dzswj p{
+    color:#fff;
+    height:26px;
+    line-height: 26px;
+    margin-bottom: 3px;
+}
+.footer_dzswj p.p_bg{
+     background:#000;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+    position:absolute;
+    bottom:0px;
+    height:74px;
+    width:100%;
+    z-index: -1;
+    margin:0px;
+}
+/*footer--end*/
+
+
+.footer{
+	background:#7fbff6;
+	text-align:center;
+	font-size:13px;
+	line-height:22px;
+	padding:12px 0px;}
+</style>
+<!--底部版权信息-->
+<div class="footer" id="xm_p" style="display:none;">
+	<p >锡林郭勒盟地方税务局主办  北京佳网科技有限责任公司提供技术支持<br />
+                  技术支持电话：400-700-6330<br />
+                  投诉电话：0471-5921813<br />
+                   京ICP备15000037号-2<br />                  
+       版本2.0.1.0630建议使用IE8以上版本的浏览器查看 </p>
+ </div>
+<div class="footer_dzswj" id="wsbs_p">
+       <p>内蒙古自治区国家税务局、内蒙古自治区地方税务局共同主办&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京佳网科技有限公司提供平台服务</p>
+      <p>技术支持电话：01053185461&nbsp;&nbsp;&nbsp;&nbsp;400-700-6330&nbsp;&nbsp;投诉电话：0471-5921813&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蒙ICP备1100266&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;版本2.0.1.0630&nbsp;&nbsp;&nbsp;&nbsp;建议使用IE8以上版本的浏览器查看  </p>
+       <p class="p_bg"></p>
+	<!-- 站长统计，内网不要加，切记！ --><!--
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " /");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256673150'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256673150' type='text/javascript'%3E%3C/script%3E"));</script>
+--></div>
+<script type="text/javascript">
+$(function(){
+	if(window.frames.length != parent.frames.length){
+	$(window.parent.document).find("img").each(function(){
+			if(null!=this.src && ''!=this.src && 'undefined'!=this.src){
+				if(this.src.indexOf("xm_wsbs_10.png")>-1){
+					$("#xm_p").css("display","block");
+					$("#wsbs_p").css("display","none");
+					return false;
+				}
+			}
+		})
+	}else{
+		$("img").each(function(){
+			if(null!=this.src && ''!=this.src && 'undefined'!=this.src){
+					if(this.src.indexOf("xm_wsbs_10.png")>-1){
+						$("#xm_p").css("display","block");
+						$("#wsbs_p").css("display","none");
+						return false;
+					}
+			}
+		})
+	}
+});
+</script>
+<!--/底部版权信息-->
+
+<script type="text/javascript">
+			$(function(){
+				
+					$("#bg_div").attr("class","all_bg")
+					
+				});
+	</script>
+</div>
+</body>
+</html>

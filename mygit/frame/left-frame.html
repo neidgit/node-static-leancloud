@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta name="renderer" content="ie-comp"/>
+		<meta http-equiv="Pragma" content="no-cache"/> 
+		<meta http-equiv="Cache-Control" content="no-cache"/> 
+		<meta http-equiv="Expires" content="0"/> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<TITLE>网上纳税申报系统</TITLE>
+		<link href="../resources/scripts/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../resources/scripts/jquery/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="../resources/scripts/aisinoLayout.js"></script>
+		<script type="text/javascript" src="../resources/scripts/ztree/js/jquery.ztree.core-3.5.min.js" ></script>
+        <script type="text/javascript" src="../control/common_sb.js"></script>
+  <style>
+html { _overflow-x:hidden; }
+</style>
+ <script type="text/javascript">
+ var zTree = null;
+ var data = 
+ {"menuList":[{"parentId":"0","MenuName":"税务登记信息","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"1"},{"parentId":"1","MenuName":"更新企业申报状态","MenuLever":"2","CellSheet":"-1","ActionUrl":"mainFrame.html","MenuId":"11"},{"parentId":"0","MenuName":"纳税申报","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"2"},{"parentId":"2","MenuName":"增值税申报表(营改增)","bddm":"SB00112","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=217&newPage=112&bddm=SB00112&t=2017071013","MenuId":"217"},{"parentId":"2","MenuName":"一表集成","bddm":"SB00112","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=62&newPage=SB00112_ybjc&bddm=SB00112&t=2017081813","MenuId":"62"},{"parentId":"2","MenuName":"所得税月(季)度查账征收(A类)","bddm":"SBCM815","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=204&newPage=SBCM815&bddm=SBCM815&t=2017080711","MenuId":"204"},{"parentId":"2","MenuName":"2016版关联关系往来表","bddm":"SB00916","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=239&newPage=916&bddm=SB00916","MenuId":"239"},{"parentId":"2","MenuName":"所得税年报查账征收(A类)","bddm":"SBCA717","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=223&newPage=717&bddm=SBCA717","MenuId":"223"},{"parentId":"2","MenuName":"财务报表（小企业）","bddm":"CWBB002","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=211&newPage=002&bddm=CWBB002&t=2017071014","MenuId":"211"},{"parentId":"2","MenuName":"财务报表年报（小企业）","bddm":"CWBB102","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=226&newPage=102&bddm=CWBB102","MenuId":"226"},{"parentId":"0","MenuName":"海关缴款书比对","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"5"},{"parentId":"5","MenuName":"数据采集","bddm":"HGWS001","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=51&newPage=51&bddm=HGWS001&t=2017071014","MenuId":"51"},{"parentId":"5","MenuName":"接收结果查询","MenuLever":"2","CellSheet":"-1","ActionUrl":"sb/hgws001/sjjsjgcx.jsp","MenuId":"52"},{"parentId":"5","MenuName":"稽核明细查询","MenuLever":"2","CellSheet":"-1","ActionUrl":"sb/hgws001/jhmxcx.jsp","MenuId":"53"},{"parentId":"5","MenuName":"稽核结果确认","MenuLever":"2","CellSheet":"-1","ActionUrl":"sb/hgws001/jhjgqr.jsp","MenuId":"54"},{"parentId":"5","MenuName":"稽核结果通知书查询","MenuLever":"2","CellSheet":"-1","ActionUrl":"sb/hgws001/jhjgtzscx.jsp","MenuId":"55"},{"parentId":"0","MenuName":"完税凭证","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"13"},{"parentId":"13","MenuName":"生成完税凭证","MenuLever":"2","CellSheet":"-1","ActionUrl":"sb/WspzCreate.jsp","MenuId":"131"},{"parentId":"13","MenuName":"完税凭证查询","MenuLever":"2","CellSheet":"-1","ActionUrl":"sb/WspzQuery.jsp","MenuId":"132"},{"parentId":"0","MenuName":"申报更正","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"8"},{"parentId":"8","MenuName":"增值税申报表(营改增)","bddm":"SB00112","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=817&ignoreSbqx=Y&newPage=112&bddm=SB00112&t=2017071013","MenuId":"817"},{"parentId":"8","MenuName":"所得税月(季)度查账征收(A类)","bddm":"SBCM815","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=804&ignoreSbqx=Y&newPage=SBCM815&bddm=SBCM815&t=2017080711","MenuId":"804"},{"parentId":"8","MenuName":"财务报表（小企业）","bddm":"CWBB002","MenuLever":"2","CellSheet":"-1","ActionUrl":"InitCell.do?menuId=811&ignoreSbqx=Y&newPage=002&bddm=CWBB002&t=2017071014","MenuId":"811"},{"parentId":"0","MenuName":"申报信息查询","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"3"},{"parentId":"3","MenuName":"本地历史报表查询","MenuLever":"2","CellSheet":"-1","ActionUrl":"sb/lsbbQuery.jsp","MenuId":"31"},{"parentId":"3","MenuName":"远程历史报表查询","MenuLever":"2","CellSheet":"-1","ActionUrl":"sysManage/fwqbbcx.jsp","MenuId":"32"},{"parentId":"3","MenuName":"申报作废","MenuLever":"2","CellSheet":"-1","ActionUrl":"sysManage/sbzf.jsp","MenuId":"33"},{"parentId":"0","MenuName":"系统管理","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"4"},{"parentId":"4","MenuName":"帮助","MenuLever":"2","CellSheet":"-1","ActionUrl":"window.open('../help.htm');","MenuId":"42"},{"parentId":"4","MenuName":"下载小助手","MenuLever":"2","CellSheet":"-1","ActionUrl":"window.open('../applet/WssbHepler_js3q.exe');","MenuId":"43"},{"parentId":"4","MenuName":"下载财报导入模板","MenuLever":"2","CellSheet":"-1","ActionUrl":"window.open('../applet/excelImportTemplet.zip');","MenuId":"43"},{"parentId":"4","MenuName":"注销","MenuLever":"2","CellSheet":"-1","ActionUrl":"doLogoff();","MenuId":"44"},{"parentId":"0","MenuName":"自审管理","MenuLever":"1","CellSheet":"-1","ActionUrl":"","MenuId":"7"},{"parentId":"7","MenuName":"税局通知","MenuLever":"2","CellSheet":"-1","ActionUrl":"sds/hxglNoticePaper.jsp","MenuId":"71"},{"parentId":"7","MenuName":"自审报告表","MenuLever":"2","CellSheet":"-1","ActionUrl":"sds/hxglReport.jsp","MenuId":"72"}]}
+
+
+
+$(document).ready(function(){	
+        initTreeOnLoad();
+});
+var treeNodes =[];
+var treeSetting = {
+		view: {
+			dblClickExpand: false,
+			showLine: true,
+			selectedMulti: false
+		},
+		data: {
+			simpleData: {
+				enable:true,
+				idKey: "id",
+				pIdKey: "pId",
+				rootPId: ""
+			}
+		},
+		callback: {
+			beforeClick: function(treeId, treeNode) {
+				//var zTree = $.fn.zTree.getZTreeObj("leftNavTreeId");
+				if (treeNode.isParent) {
+					zTree.expandNode(treeNode);
+					return false;
+				} else {
+					return true;
+				}
+			},
+			onClick: function zTreeOnClick(event, treeId, treeNode) {
+
+				clickId = treeNode.id;
+				
+				var PtreeNode = treeNode.getParentNode();
+				// console.log(window.parent.document.getElementById("mainFrameContent"))
+				window.parent.document.getElementById('mainFrameContent').src="frame/right-frame.html"
+				// replaceMainContent(treeNode.id,treeNode.name,treeNode.file,treeNode.cSheet,treeNode.pId,PtreeNode.name);
+			}
+		}
+};
+function f(url) {
+    window.parent.framecontent.location.href = url;
+}
+
+
+function initTreeOnLoad(){
+	
+	     displayMenu(data.menuList);
+	
+}
+var clickId;
+function add3LevelMenu(bddm){
+	// if(clickId!="61")
+	// 	$.ajax({
+	// 	   type: "POST",
+	// 	   url: "../ajaxDo.do",
+	// 	   dataType : "json",
+	// 	   data: {
+	// 			method:"addTreeMenu",
+	// 			clickId:clickId,
+	// 			bddm:bddm
+	// 	   },
+	// 	   success: function(data){
+	// 	     addMenu(data.menuList);
+	// 	   } 
+	// 	});
+}
+function add3LevelMenu2P2(bddm, parentId){
+	// $.ajax({
+	//    type: "POST",
+	//    url: "../ajaxDo.do",
+	//    dataType : "json",
+	//    data: {
+	// 		method:"addTreeMenu",
+	// 		clickId:parentId,
+	// 		bddm:bddm
+	//    },
+	//    success: function(data){
+	// 		//var zTree = $.fn.zTree.getZTreeObj("leftNavTreeId");
+	// 		for ( var i = 0; i < data.menuList.length; i++) {
+	// 			if("SB00112_YBJC_NB" == bddm && i>=2) return;
+	// 			var tNode = zTree.getNodesByParam("id",data.menuList[i].MenuId,null);
+	// 			if(tNode.length==0){
+	// 				tNode = zTree.getNodesByParam("id",data.menuList[i].parentId,null);
+	// 				if(tNode) {
+	// 					treeNode=tNode[0];
+	// 					var url = data.menuList[i].ActionUrl;
+	// 					if(url.charAt(url.length-1)==";"){
+	// 						zTree.addNodes(treeNode, {id:data.menuList[i].MenuId,pId:data.menuList[i].parentId,name:data.menuList[i].MenuName,click:url});
+	// 					}else{
+	// 						zTree.addNodes(treeNode, {id:data.menuList[i].MenuId,pId:data.menuList[i].parentId,name:data.menuList[i].MenuName,file:data.menuList[i].ActionUrl,cSheet:data.menuList[i].CellSheet});
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	//    } 
+	// });
+}
+function add3LevelMenu2P(bddm, parentId){
+	// $.ajax({
+	//    type: "POST",
+	//    url: "../ajaxDo.do",
+	//    dataType : "json",
+	//    data: {
+	// 		method:"addTreeMenu",
+	// 		clickId:parentId,
+	// 		bddm:bddm
+	//    },
+	//    success: function(data){
+	// 		//var zTree = $.fn.zTree.getZTreeObj("leftNavTreeId");
+	// 		for ( var i = 0; i < data.menuList.length; i++) {
+	// 			var tNode = zTree.getNodesByParam("id",data.menuList[i].MenuId,null);
+	// 			if(tNode.length==0){
+	// 				tNode = zTree.getNodesByParam("id",data.menuList[i].parentId,null);
+	// 				if(tNode) {
+	// 					treeNode=tNode[0];
+	// 					var url = data.menuList[i].ActionUrl;
+	// 					if(url.charAt(url.length-1)==";"){
+	// 						zTree.addNodes(treeNode, {id:data.menuList[i].MenuId,pId:data.menuList[i].parentId,name:data.menuList[i].MenuName,click:url});
+	// 					}else{
+	// 						zTree.addNodes(treeNode, {id:data.menuList[i].MenuId,pId:data.menuList[i].parentId,name:data.menuList[i].MenuName,file:data.menuList[i].ActionUrl,cSheet:data.menuList[i].CellSheet});
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	//    } 
+	// });
+}
+function clickTree(treeId) {
+	///var zTree = $.fn.zTree.getZTreeObj("leftNavTreeId");
+	var tNode = zTree.getNodesByParam("id",treeId,null);
+	if(tNode) {
+		treeNode=tNode[0];
+		zTree.selectNode(treeNode,false);
+		var PtreeNode = treeNode.getParentNode();
+		replaceMainContent(treeNode.id,treeNode.name,treeNode.file,treeNode.cSheet,treeNode.pId,PtreeNode.name);
+	} else {
+		alert("not found "+treeId+"["+tNode);
+	}
+}
+function displayMenu(menuList){
+	for ( var i = 0; i < menuList.length; i++) {
+		var url = menuList[i].ActionUrl;
+		if(menuList[i].parentId == "0"){
+			treeNodes.push({id:menuList[i].MenuId,pId:menuList[i].parentId,name:menuList[i].MenuName,open:true,cSheet:menuList[i].CellSheet});
+		}else if(url.charAt(url.length-1)==";"){
+			treeNodes.push({id:menuList[i].MenuId,pId:menuList[i].parentId,name:menuList[i].MenuName,click:url});
+		}else{
+			treeNodes.push({id:menuList[i].MenuId,pId:menuList[i].parentId,name:menuList[i].MenuName,file:menuList[i].ActionUrl,cSheet:menuList[i].CellSheet});
+		}
+	}
+	
+	var t = $("#leftNavTreeId");
+	t = $.fn.zTree.init(t, treeSetting, treeNodes);
+	zTree = $.fn.zTree.getZTreeObj("leftNavTreeId");
+}
+
+function addMenu(menuList){
+	//var zTree = $.fn.zTree.getZTreeObj("leftNavTreeId");
+	nodes_a = zTree.getSelectedNodes();
+	treeNode_a = nodes_a[0];
+	for ( var i = 0; i < menuList.length; i++) {
+		var tNode = zTree.getNodesByParam("file",menuList[i].ActionUrl,null);
+			if(tNode.length==0)
+				zTree.addNodes(treeNode_a, {id:menuList[i].MenuId,pId:menuList[i].parentId,name:menuList[i].MenuName,file:menuList[i].ActionUrl,cSheet:menuList[i].CellSheet});
+	}
+}
+function loadReady() {
+		var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
+		htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
+		maxH = Math.max(bodyH, htmlH), minH = Math.min(bodyH, htmlH),
+		h = demoIframe.height() >= maxH ? minH:maxH ;
+		if (h < 530) h = 530;
+		demoIframe.height(h);
+}
+function removeChildNodes(pId){
+	var nodes = zTree.getNodesByParam("id",pId,null);
+	//alert(nodes);
+	if (nodes && nodes.length>0) {
+		zTree.removeChildNodes(nodes[0]);
+		//zTree.removeNode(nodes[0]);
+	}
+}
+</script>
+   </head>
+  
+<body style="overflow-x:auto;overflow-y:auto">
+
+<input name="exitDisplay" id="exitDisplay" type="hidden" value="block"/>
+<div align="left" style="BORDER-RIGHT: #999999 0px dashed">
+		<ul id="leftNavTreeId" class="ztree" style="width:260px; overflow-x:hidden;"></ul>
+</div>
+  </body>
+  <script>
+  (function(){
+  
+  	$("#leftNavTreeId_26_span").click(function(){
+  	alert(1)
+  })
+  })()
+  
+  </script>
+</html>

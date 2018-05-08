@@ -1,0 +1,494 @@
+
+
+
+
+
+
+
+
+
+<html>
+	<HEAD>
+		<META http-equiv="X-UA-Compatible" content="IE=7"/>
+        <meta name="renderer" content="ie-comp"/>
+		<TITLE>网上纳税申报系统</TITLE>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<script type="text/javascript">
+			var contextPath = "/js3q";
+			var dqbz = "nm";
+			var smtPath="/js3q";
+		</script>
+		<SCRIPT LANGUAGE=VBSCRIPT src="../control/common_sb.vbs"></SCRIPT>
+		<SCRIPT LANGUAGE=JAVASCRIPT src="../control/JScodeSeg.js"></SCRIPT>
+		<SCRIPT LANGUAGE=JAVASCRIPT src="../control/common_sb.js"></SCRIPT>
+		<script type="text/javascript" src="../resources/scripts/jquery/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="../resources/styles/cupertino/js/jquery-ui-1.10.1.custom.min.js"></script>
+		<link rel="stylesheet" href='../resources/styles/aisinoCSS.css' type="text/css" />
+		<link href="../resources/styles/Toolbar.css" rel="stylesheet" type="text/css" />
+		<link href="../resources/styles/public/css/table.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="../resources/scripts/jquery/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="../resources/scripts/Toolbar.js"></script>
+
+		<script type="text/javascript" src="../resources/scripts/myDate97/WdatePicker.js"></script>
+		<link href="../resources/scripts/myDate97/skin/WdatePicker.css" rel="stylesheet" type="text/css" />
+		<link href="../resources/scripts/myDate97/skin/default/WdatePicker.css" rel="stylesheet" type="text/css" />
+		
+
+<script type="text/javascript">
+var index = "0";
+$(document).ready(function() {
+	//$.blockUI.defaults.message = "<h4><img src='"+contextPath+"/resources/images/busy.gif' /> 正在处理, 请稍候...</h4>";
+		createToolbar();
+		createChoose();
+		createTimeValue();
+	});
+function createToolbar() {
+	var toolbar;
+	toolbar = new Toolbar( {
+		renderTo : 'toolbarId',
+		border : 'top',
+		items : [ 
+			{type : 'button',text : '返回',bodyStyle : 'new',useable : 'T',handler : function(){ret_userinfo();}},
+			{type : 'button',text : '查询',bodyStyle : 'new',useable : 'T',handler : function() {queryBd();}
+		} ],
+		active : 'ALL'//激活哪个
+	});
+
+	toolbar.render();
+
+	toolbar.genAZ();
+
+}
+function createChoose() {
+	var chooseContent = "<select name='szList' id='szList' class='contact01_input' onchange='gradeChange();'>";
+	chooseContent += "<option value=''>--请选择报表--</option>";
+	
+		chooseContent += "<option value='增值税申报表（营改增）'>--增值税申报表（营改增）--</option>";	
+	
+		chooseContent += "<option value='增值税小规模申报表（营改增）'>--增值税小规模申报表（营改增）--</option>";	
+	
+		chooseContent += "<option value='SBCN800'>--所得税月(季)度核定征收(B类)--</option>";	
+	
+		chooseContent += "<option value='SBCN815'>--2015版所得税月(季)度核定征收(B类)--</option>";	
+	
+		chooseContent += "<option value='SBCM800'>--所得税月(季)度查账征收(A类)--</option>";	
+	
+		chooseContent += "<option value='2015版所得税月(季)度查账征收(A类)'>--2015版所得税月(季)度查账征收(A类)--</option>";	
+	
+		chooseContent += "<option value='CWBB002'>--财务报表（小企业）--</option>";	
+	
+		chooseContent += "<option value='CWBB001'>--财务报表（一般企业）--</option>";	
+	
+		chooseContent += "<option value='CWBB003'>--财务报表（商业银行）--</option>";	
+	
+		chooseContent += "<option value='CWBB004'>--财务报表（保险公司）--</option>";	
+	
+		chooseContent += "<option value='CWBB005'>--财务报表（证券公司）--</option>";	
+	
+		chooseContent += "<option value='CWBB006'>--财务报表（会计制度）--</option>";	
+	
+		chooseContent += "<option value='CWBB007'>--财务报表（事业单位）--</option>";	
+	
+		chooseContent += "<option value='CWBB009'>--财务报表（民间非盈利）--</option>";	
+	
+		chooseContent += "<option value='SB00301'>--消费税（烟类）--</option>";	
+	
+		chooseContent += "<option value='SB00302'>--消费税（卷烟批发）--</option>";	
+	
+		chooseContent += "<option value='SB00303'>--消费税（酒类）--</option>";	
+	
+		chooseContent += "<option value='SB00305'>--消费税（小汽车）--</option>";	
+	
+		chooseContent += "<option value='SB00306'>--消费税（其他）--</option>";	
+	
+		chooseContent += "<option value='SB00307'>--消费税(电池)申报表--</option>";	
+	
+		chooseContent += "<option value='SB00309'>--消费税(涂料)申报表--</option>";	
+	
+		chooseContent += "<option value='WHSY100'>--文化事业建设费申报表--</option>";	
+	
+		chooseContent += "<option value='SB00908'>--关联关系往来表--</option>";	
+	
+		chooseContent += "<option value='2017版所得税年报查账征收(A类)'>--2017版所得税年报查账征收(A类)--</option>";	
+	
+		chooseContent += "<option value='SBCM717'>--2017版所得税年报查账征收(A类)-主表--</option>";	
+	
+		chooseContent += "<option value='2015所得税年报查账征收(A类)'>--2015所得税年报查账征收(A类)--</option>";	
+	
+		chooseContent += "<option value='SBCM714'>--2015所得税年报查账征收(A类)-主表--</option>";	
+	
+		chooseContent += "<option value='SBCA702'>--分支机构所得税年报查账征收(A类)--</option>";	
+	
+		chooseContent += "<option value='SBCB715'>--2015版所得税年报核定征收(B类)--</option>";	
+	
+		chooseContent += "<option value='CWBB101'>--财务报表年报（一般企业）--</option>";	
+	
+		chooseContent += "<option value='CWBB102'>--财务报表年报（小企业）--</option>";	
+	
+		chooseContent += "<option value='CWBB103'>--财务报表年报（商业银行）--</option>";	
+	
+		chooseContent += "<option value='CWBB104'>--财务报表年报（保险公司）--</option>";	
+	
+		chooseContent += "<option value='CWBB105'>--财务报表年报（证券公司）--</option>";	
+	
+		chooseContent += "<option value='CWBB106'>--财务报表年报（会计制度）--</option>";	
+	
+		chooseContent += "<option value='CWBB107'>--财务报表年报（事业单位）--</option>";	
+	
+		chooseContent += "<option value='CWBB109'>--财务报表年报（民间非盈利）--</option>";	
+	
+		chooseContent += "<option value='HGWS001'>--海关缴款书申报--</option>";	
+	
+		chooseContent += "<option value='TYSB100'>--水利基金通用申报--</option>";	
+	
+		chooseContent += "<option value='CCLX100'>--储蓄存款利息所得扣缴个人所得税报告表--</option>";	
+	
+		chooseContent += "<option value='FQDQ100'>--废弃电器电子产品处理基金申报表--</option>";	
+	
+		chooseContent += "<option value='SDSTZMX'>--所得税附表二台账明细信息--</option>";	
+	
+		chooseContent += "<option value='SDSTZLR'>--所得税附表二台账录入信息--</option>";	
+	
+		chooseContent += "<option value='ZDSY100'>--重点税源监控表--</option>";	
+	
+		chooseContent += "<option value='SB00916'>--2016版关联关系往来表--</option>";	
+	
+		chooseContent += "<option value='SB00212_yjLsb'>--小规模一键零申报--</option>";	
+	
+		chooseContent += "<option value='SB00213'>--定期定额户分月汇总申报表--</option>";	
+	
+		chooseContent += "<option value='SB00112_Ybjc'>--增值税申报表（营改增）一表集成--</option>";	
+	
+	chooseContent += "</select>";
+	$("#szChooseList").html(chooseContent);
+	
+	var chooseContent = "<select name='swjgList' id='swjgList' class='contact01_input'>";
+	chooseContent += "<option  value=''>--请选择主管税务所名称--</option>";
+	
+	chooseContent += "</select>";
+	$("#swjgChooseList").html(chooseContent);
+		
+
+}
+
+function gradeChange(){
+	sz = $("#szList").val();
+	if(sz == "SB00113" && index != 0)
+		$("#swjgTr").show();
+	else
+		$("#swjgTr").hide();
+}
+function createTimeValue(){
+	var now = new Date(); //当前日期 
+	var nowDayOfWeek = now.getDay(); //今天本周的第几天 
+	var nowDay = now.getDate(); //当前日 
+	var nowMonth = now.getMonth(); //当前月 
+	var nowYear = now.getYear(); //当前年 
+	//nowYear += (nowYear < 2000) ? 1900 : 0; // 
+	var lastMonthDate = new Date(); //上月日期 
+	lastMonthDate.setDate(1);
+	lastMonthDate.setMonth(lastMonthDate.getMonth()-1); 
+	var lastYear = lastMonthDate.getYear(); 
+	var lastMonth = lastMonthDate.getMonth(); 
+	var lastMonthStartDate = new Date(lastYear, lastMonth, 1); 
+	lastMonthStartDate = formatDate(lastMonthStartDate);
+	var lastMonthEndDate = new Date(lastYear, lastMonth, getMonthDays(lastMonth)); 
+	lastMonthEndDate = formatDate(lastMonthEndDate); 
+
+	$("#timeQ").val(lastMonthStartDate);
+	$("#timeZ").val(lastMonthEndDate);
+}
+
+//格局化日期：yyyy-MM-dd 
+function formatDate(date) { 
+	var myyear = date.getFullYear(); 
+	var mymonth = date.getMonth()+1; 
+	var myweekday = date.getDate(); 
+	
+	if(mymonth < 10){ 
+	mymonth = "0" + mymonth; 
+	} 
+	if(myweekday < 10){ 
+	myweekday = "0" + myweekday; 
+	} 
+	return (myyear+"-"+mymonth + "-" + myweekday); 
+} 
+//获得上月开端时候 
+function getLastMonthStartDate(){ 
+	var lastMonthStartDate = new Date(nowYear, lastMonth, 1); 
+	return formatDate(lastMonthStartDate); 
+} 
+//获得上月停止时候 
+function getLastMonthEndDate(){ 
+	var lastMonthEndDate = new Date(nowYear, lastMonth, getMonthDays(lastMonth)); 
+	return formatDate(lastMonthEndDate); 
+} 
+//获得某月的天数 
+function getMonthDays(myMonth){ 
+	var now = new Date(); //当前日期 
+	var nowYear = now.getYear(); //当前年 
+	var monthStartDate = new Date(nowYear, myMonth, 1); 
+	var monthEndDate = new Date(nowYear, myMonth + 1, 1); 
+	var days = (monthEndDate - monthStartDate)/(1000 * 60 * 60 * 24); 
+	return days; 
+} 
+function ret_userinfo(){
+	$("#nav",top.document)[0].contentWindow.clickTree("11");
+}</script>
+	</HEAD>
+	<BODY>
+		<div class="title_t" style="height: 25px; line-height: 25px;">
+			<span>服务器报表查询</span>
+		</div>
+		<!-- ************ 显示工具条-->
+		<div id="toolbarId"></div>
+		<table border="0" cellpadding="0" cellspacing="1" class="table_list"
+			style="margin-top: 0px; margin-bottom: 10px;">
+			<tr>
+				<td align="right" class="indent" style="width: 30%">
+					报表类型：
+				</td>
+				<td id="szChooseList" align="left" class="indent" style="padding-left:20px">
+				</td>
+			</tr>
+			<tr>
+				<td align="right" class="indent">
+					所属时期起：
+				</td>
+				<td align="left" class="indent" style="padding-left:20px">
+					<input class="Wdate" type="text" id="timeQ"
+						onFocus="WdatePicker({isShowClear:false,readOnly:true})" />
+				</td>
+			</tr>
+			<tr>
+				<td align="right" class="indent">
+					所属时期止：
+				</td>
+				<td align="left" class="indent" style="padding-left:20px">
+					<input class="Wdate" type="text" id="timeZ"
+						onFocus="WdatePicker({isShowClear:false,readOnly:true})" />
+				</td>
+			</tr>
+			<tr id="swjgTr" style="display:none">
+				<td align="right" class="indent">
+					主管税务所（科、分局）名称：
+				</td>
+				<td id="swjgChooseList" align="left" class="indent" style="padding-left:20px">
+				</td>
+			</tr>
+		</table>
+		<div id="info" style="display:;height: 25px; line-height: 25px;">
+			<span>您好！
+				本功能用于查询通过<font color="blue"><b>[网报新系统申报成功过]</b></font>申报成功的申报表。
+			</span>
+		</div>
+		<div id="ls_info_list" style="display: none;">
+			<table id="mainTable" class="Results_t" border="0" cellpadding="0"
+				cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<td width="3%">
+							序号
+						</td>
+						<td width="14%">
+							税种名称
+						</td>
+						<td width="6%">
+							所属期起
+						</td>
+						<td width="6%">
+							所属期止
+						</td>
+						<td width="4%">
+							操作
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</BODY>
+</html>
+<script type="text/javascript">
+var sz, ssqq, ssqz, swjg;
+function checkEdt() {
+	sz = $("#szList").val();
+	if (sz == null || sz == "") {
+		alert("请选择税种类型！");
+		return false;
+	}
+	ssqq = $("#timeQ").val();
+	if (ssqq == null || ssqq == "") {
+		alert("请选择所属期起！");
+		return false;
+	}
+	ssqz = $("#timeZ").val();
+	if (ssqz == null || ssqz == "") {
+		alert("请选择所属期止！");
+		return false;
+	}
+	if (ssqq > ssqz) {
+		alert("起时间不能晚于止时间,请重新选择！");
+		return false;
+	}
+	swjg = $("#swjgList").val();
+	if(sz == "SB00113" && (swjg == null || swjg == "") && index != 0){
+		alert("请选择主管税务所！");
+		return false;
+	}
+	//lpp 20160201 
+	//如果是安徽，远程历史报表查询的所属期止不能小于 当前所属期止-3个月。即指能查前三个月的报表。
+	// if(dqbz == "ah"){
+	// 	//还是要判断一下，如果查年报就提示远程查询不支持.
+	// 	if(sz == "SBCA714" || sz == "SBCM714" || sz == "SBCA717" || sz == "SBCM717" || sz == "SBCB714" || sz == "SBCB715" || sz == "CWBB101" 
+	// 		|| sz == "CWBB102" || sz == "CWBB103" || sz == "CWBB104" || sz == "CWBB105" || sz == "CWBB106" 
+	// 		|| sz == "CWBB107"){
+	// 		alert("年报不支持远程查询功能,请重新选择！");
+	// 		return false;
+	// 	}
+	// 	//
+	// 	var now = new Date();
+	// 	var lys = AddMonths(now,-4);
+	// 	lys = formatDate(getLastDay(lys));
+	// 	if(ssqz < lys){
+	// 		alert("所属时期止不能早于当前所属期的前三个月,请重新选择！");
+	// 		return false;
+	// 	}
+	// }
+	//lpp end
+	return true;
+}
+
+function AddMonths(date, value) {
+    date.setMonth(date.getMonth() + value);
+    return date;
+}
+
+function getLastDay(dt){  
+    dt.setDate(1);  
+    dt.setMonth(dt.getMonth()+1);  
+    cdt = new Date(dt.getTime()-1000*60*60*24);  
+    return cdt;
+} 
+var tmp_bdmc
+function queryBd() {
+	if (checkEdt()) {
+		 tmp_bdmc= sz;
+		 
+		$("#mainTable tbody").empty();
+		displayTable();				
+				
+	}
+} 
+ function dateFormat(date)  
+         {  
+            return  dateStr = date.replace(/\-/g, "");  
+            
+         }  
+function bbval(sheet,num){
+	if(sheet == 1){
+		localStorage.setItem("quarter",num);
+	}else if(sheet == 2){
+		localStorage.setItem("month",num);
+	}; 
+	localStorage.setItem("sheet",sheet);
+	window.parent.open( "sheet/sheet"+sheet+".html","_blank","height=633,width=873,top=65,left=160,scrollbars=1,resizable=1")      
+}
+	// var storage = window.localstorage;
+	// storage[sheet] = num;
+	// storage[month] = month;
+
+function displayTable() {
+	
+	var timeQ = dateFormat($('#timeQ').val());
+	var timeZ = dateFormat($('#timeZ').val());
+	var szVal = $('#szList').val();
+	var num ;
+	// var bbInfo = 
+	// [{"sssqz":"20171231","file":"file0","sssqq":"20171201"}]
+	// $('#mainTable tbody').empty();
+
+	if (szVal == '增值税申报表（营改增）') {
+		if (timeQ == '20171201' && timeZ == '20171231') {
+			// 月
+		 pushTable('2','1712');
+		}else if(timeQ == '20180301' && timeZ == '20180331'){
+		 pushTable('2','1803');
+		// }else if(timeQ == '20171001' && timeZ == '20171031'){
+		//  pushTable('2','1710');
+		// }else if(timeQ == '20170901' && timeZ == '20170930'){
+		//  pushTable('2','1709');
+		}else{
+			alert("非常抱歉，没有查到您的历史申报数据，请按照以下条件排查：\n1、您选择的所属期与报表类型不符；\n2、在其他申报系统中申报的报表本系统无法查询；\n3、在国税办税大厅申报的报表网上申报无法查询。\n请您排除以上原因后，再进行操作。")
+		}
+		
+	}else if (szVal == '2015版所得税月(季)度查账征收(A类)') {
+		// 季度
+		
+		if(timeQ == '20170101' && timeZ == '20170331' ){
+			// quarter = 1;
+		 	pushTable('1','1701');
+		}else if(timeQ == '20170401' && timeZ == '20170630'){
+		 	pushTable('1','1702');
+		}else if(timeQ == '20170701' && timeZ == '20170930'){
+		 	pushTable('1','1703');
+		}else if(timeQ == '20171001' && timeZ == '20171231'){
+		 	pushTable('1','1704');
+		}else{
+			alert("非常抱歉，没有查到您的历史申报数据，请按照以下条件排查：\n1、您选择的所属期与报表类型不符；\n2、在其他申报系统中申报的报表本系统无法查询；\n3、在国税办税大厅申报的报表网上申报无法查询。\n请您排除以上原因后，再进行操作。")
+		}
+		
+	}else{
+		
+		alert("非常抱歉，没有查到您的历史申报数据，请按照以下条件排查：\n1、您选择的所属期与报表类型不符；\n2、在其他申报系统中申报的报表本系统无法查询；\n3、在国税办税大厅申报的报表网上申报无法查询。\n请您排除以上原因后，再进行操作。")
+		
+	}
+	function pushTable(sheet,num){
+		
+		// for(var i=0;i<bbInfo.length;i++){
+		content = "<tr><td width='3%'>"
+				+ 1
+				+ "</td><td width='14%'>"
+				+ tmp_bdmc
+				+ "</td><td width='6%'>"
+				+ timeQ
+				+ "</td><td width='6%'>"
+				+ timeZ
+				+ "</td><td width='4%'><input class='btn btn-login' type=button name='submit' value='打开报表'  onclick=\"bbval("+sheet+","+num+")\" /></td></tr>";
+ 
+		$("#mainTable tbody").append(content);
+	
+		$("#ls_info_list").css("display", "block");
+	}
+	
+}
+
+function openCell(tmp_sssqq,tmp_sssqz, tmp_file) {
+	var url = "";
+	if(sz == "CWBB009"||sz == "CWBB101"||sz == "CWBB102"||sz == "CWBB103"||sz == "CWBB104"||sz == "CWBB105"||sz == "CWBB106"
+		||sz == "CWBB107"||sz == "CWBB108"||sz == "CWBB109"||sz == "SBCB715"||sz == "SBCA717"||sz == "SBCM717"){
+		url = contextPath +"/sb/" + sz.toLowerCase() + "/"+sz.toLowerCase()+".jsp?strTemp=" + escape("newPage") + "&file=" + tmp_file;
+	}else if(dqbz == "nm"){
+		if(sz == "SB00112")
+			url = contextPath +"/sb/zzsybr/zzsybr.jsp?strTemp=" + escape("newPage") + "&file=" + tmp_file;
+		else if(sz == "SB00212")
+			url = contextPath +"/sb/zzsxgm/zzsxgm.jsp?strTemp=" + escape("newPage") + "&file=" + tmp_file;
+		else if(sz == "CCLX100"||sz == "CWBB001"||sz == "CWBB002"||sz == "CWBB003"||sz == "CWBB004"||sz == "CWBB005"
+			||sz == "CWBB006"||sz == "CWBB007"||sz == "CWBB008"||sz == "FQDQ100"||sz == "HGWS001"||sz == "SB00213"
+			||sz == "SB00301"||sz == "SB00302"||sz == "SB00303"||sz == "SB00304"||sz == "SB00305"||sz == "SB00306"
+			||sz == "SB00307"||sz == "SB00309"||sz == "SBCM815"||sz == "SBCN815"||sz == "TYSB100"||sz == "WHSY100"
+			||sz == "ZDSY100"||sz == "SBCA717"||sz == "SBCM717"||sz == "SB00916"||sz == "SBCA702")
+			url = contextPath +"/sb/" + sz.toLowerCase() + "/"+sz.toLowerCase()+".jsp?strTemp=" + escape("newPage") + "&file=" + tmp_file;
+		else
+			url = smtPath+"/sysManage/cellModePage.jsp?sssqq="+tmp_sssqq+"&sssqz="+tmp_sssqz+"&bdmc="+tmp_bdmc+"&bddm="+sz+"&file="+tmp_file;
+	}else
+		url = smtPath+"/sysManage/cellModePage.jsp?sssqq="+tmp_sssqq+"&sssqz="+tmp_sssqz+"&bdmc="+tmp_bdmc+"&bddm="+sz+"&file="+tmp_file;
+	//window.showModalDialog("cellModePage.jsp?sssqq="+tmp_sssqq+"&sssqz="+tmp_sssqz+"&bdmc="+tmp_bdmc, window,'dialogWidth:800px;dialogHeight:500px');
+	window.open(url,"newwindow","depended=yes,resizable=yes,scrollbars=yes");//height=500px,width=800px, 
+}
+</script>

@@ -1,0 +1,156 @@
+.table {
+	border: 1px solid #003399;
+}
+.button2 {
+	font-family: "宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #104A7B;
+	border-right: 1px solid #104A7B;
+	border-left: 1px solid #AFC4D5;
+	border-top: 1px solid #AFC4D5; 
+	color: black;
+	height: 18px;
+	text-decoration: none;
+	cursor: hand;
+	background-image: url("../images/buttonBG2.gif");
+	background-repeat: no-repeat;
+	border-style: none;
+	width: 41px;
+	margin: auto;
+	padding-top: 3px;
+	text-indent: 5px;
+}
+.button3 {
+	font-family: "宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #104A7B;
+	border-right: 1px solid #104A7B;
+	border-left: 1px solid #AFC4D5;
+	border-top: 1px solid #AFC4D5; 
+	color: black;
+	height: 18px;
+	text-decoration: none;
+	cursor: hand;
+	background-image: url("../images/buttonBG3.gif");
+	background-repeat: no-repeat;
+	border-style: none;
+	width: 52px;
+	margin: auto;
+	padding-top: 3px;
+	text-indent: 5px;
+}
+.button4 {
+	font-family: "宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #104A7B;
+	border-right: 1px solid #104A7B;
+	border-left: 1px solid #AFC4D5;
+	border-top: 1px solid #AFC4D5; 
+	color: black;
+	height:18px;
+	text-decoration: none;
+	cursor: hand;
+	background-image: url("../images/buttonBG4.gif");
+	background-repeat: no-repeat;
+	border-style: none;
+	width: 63px;
+	margin: auto;
+	padding-top: 3px;
+	text-indent: 5px;
+}
+.button5 {
+	font-family: "宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #104A7B;
+	border-right: 1px solid #104A7B;
+	border-left: 1px solid #AFC4D5;
+	border-top: 1px solid #AFC4D5; 
+	color: black;
+	height:18px;
+	text-decoration: none;
+	cursor: hand;
+	background-image: url("../images/buttonBG5.gif");
+	background-repeat: no-repeat;
+	border-style: none;
+	width: 74px;
+	margin: auto;
+	padding-top: 3px;
+	text-indent: 5px;
+}
+.button6 {
+	font-family: "宋体";
+	font-size: 12px;
+	border-bottom: 1px solid #104A7B;
+	border-right: 1px solid #104A7B;
+	border-left: 1px solid #AFC4D5;
+	border-top: 1px solid #AFC4D5; 
+	color: black;
+	height:18px;
+	text-decoration: none;
+	cursor: hand;
+	background-image: url("../images/buttonBG6.gif");
+	background-repeat: no-repeat;
+	border-style: none;
+	width: 85px;
+	margin: auto;
+	padding-top: 3px;
+	text-indent: 5px;
+}
+.text {
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.text {
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.text-k {
+	font-size: 12px;
+	color: #333333;
+}
+.text-bt {
+	font-size: 12px;
+	font-weight: bold;
+	color: #0C67AE;
+}
+.text-bt1 {
+	font-size: 12px;
+	font-weight: bold;
+	color: black;
+}
+
+TD {
+	FONT-SIZE: 12px; COLOR: black;
+	background-repeat: repeat-x
+}
+A:link {
+	COLOR: #0042CA; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0042CA; TEXT-DECORATION: none
+}
+
+.mySelect {
+	BACKGROUND-COLOR: #f2f8ff; BORDER-BOTTOM-COLOR: #000000; BORDER-BOTTOM-WIDTH: 1px; BORDER-LEFT-COLOR: #000000; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-COLOR: #000000; BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-COLOR: #000000; BORDER-TOP-WIDTH: 1px; FONT-FAMILY: 宋体; FONT-SIZE: 9pt;
+	width: 150px
+}
+
+
+.mybtn {
+	height: 24px;
+	width: 100px;
+	BORDER: #c7cacd 1px solid; 
+	PADDING-RIGHT: 2px; 
+	PADDING-LEFT: 2px; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#3c99e1, EndColorStr=#14419a); 
+	CURSOR: hand; 
+	COLOR: #ffffff; 
+	PADDING-TOP: 2px; 
+}
+
+.btn-login {
+	width: 132px;
+	background-position: 0 -208px;
+	color: white;
+}

@@ -1,0 +1,595 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0;
+	padding:0;
+	font-size:12px;
+	font-family:microsoft yahei,simsun,Arail;
+	color:#333;}
+ul,li,p{
+	margin:0;
+	padding:0;}
+
+a{
+	text-decoration:none;
+	color:#444;}
+ul,li{
+	list-style:none;}
+.clear{
+	clear:both;}
+img{
+	border:none;}
+/*1-1*/
+.colred{
+	color:#d10000;
+	margin-left:3px;}
+
+/*1-2 联合登记附件上传*/
+.slcx tr.bgbluer{
+	background:#ebf5ff;}
+.slcx td{
+	height:30px;
+	line-height:30px;
+	text-align:left;
+	padding-left:10px;
+	font-size:14px;}
+.textle td{
+	text-align:left;
+	padding-left:10px;
+	font-size:14px;}
+.textle td a{
+	background:url(../images/btnbg.jpg) repeat-x left center;
+	padding:3px 10px;
+	border:1px #2c59aa solid;}
+/*1-4登记核准页面*/
+.conmain{
+	margin:10px;}
+.conmain h3{
+	text-align:center;
+	font-size:18px;}
+.switch{
+	text-align:center;
+	margin-top:20px;}
+.switch ul li{
+	height:45px;
+	line-height:45px;
+	margin-right:50px;
+	font-size:16px;
+	display:inline-block;
+	*display:inline;
+ 	*zoom:1;}
+.switch ul li.jbxxtbb{
+	color:#d10000;}
+.switch ul li img{
+	float:left;
+	margin-right:10px;}
+.switch ul li a{
+	padding:5px 8px;
+	display:block;}
+.switch ul li a.bgblue {
+	background:#0978e0;
+	color:#fff;}
+.tablmain{
+	padding:10px;}
+.tablmain table{
+	margin-top:10px;
+	border-top:1px #99bce6 solid;
+	border-left:1px #99bce6 solid;
+	text-align:center;
+	font-size:13px;	}
+.tablmain table tr th{
+	border-bottom:1px #99bce6 solid;
+	border-right:1px #99bce6 solid;
+	height:30px;
+	line-height:30px;
+	background:url(../images/th_bg.jpg) repeat-x;
+	color:#125fa9;}
+.tablmain table td{
+	border-bottom:1px #99bce6 solid;
+	border-right:1px #99bce6 solid;
+	height:30px;
+	line-height:30px;}
+.tablmain table td a.downxz{
+	cursor:pointer;}
+table.dqxz{
+	text-align:left;}
+table.dqxz td{
+	padding-left:10px;}
+table.dqxz td.bg_titil{
+	background:#a8d1ff;
+	font-weight:bold;
+	color:#125fa9;}
+.dqxz td select.semar10{
+	margin-right:10px;
+	color:#444;
+	height:23px;
+	line-height:23px;}
+.dqxz td.hei80{
+	height:120px;}
+.dqxz td textarea.jdjly{
+	width:400px;
+	height:100px;}
+.dqxz td textarea.jdjly2{
+	width:400px;
+	height:100px;}
+.hzdj_btn{
+	text-align:center;
+	margin-top:15px;}
+.hzdj_btn ul li{
+	display:inline-block;
+	margin-right:15px;
+	*display:inline;
+	*zoom:1;}
+.hzdj_btn ul li a{
+	background:url(../images/btnbg.jpg) repeat-x left center;
+	border:1px #2c59aa solid;
+	font-size:14px;
+	padding:0px 10px;
+	display:block;}
+
+/*核准补录页面*/
+.dqxz td select.wid300{
+	width:300px;}
+.dqxz td input.wjmc{
+	width:500px;
+	padding:3px;}
+.dqxz td a input.btnliul{
+	padding:3px 10px;}
+.scbtn{
+	background:url(../images/btnbg.jpg) repeat-x left center;
+	padding:3px 15px;
+	border:1px #4780E6 solid;}
+/*1-6登记受理查询*/
+.slcx{
+	border:none;}
+.slcx td.textmi{
+	padding-left:40%;
+	height:40px;}
+.tsred{
+	color:#d10000;}
+/*附件上传*/
+.switch ul li a.bgblue{}
+/*三证合一信息补录1*/
+.szhyone{
+	text-align:left;
+	margin-left:0;}
+.szhyone ul li{
+	float:left;
+	background:#ecf4fd;
+	border:1px #c2d6ec solid;
+	margin-right:10px;
+	font-size:16px;}
+.szhyone ul li a{
+	height:28px;
+	line-height:28px;
+	padding:5px 8px;}
+.szhyone ul li a.bgblue{
+	background:#0978e0;
+	color:#fff;}
+.szhyxbl{
+	border:1px #99c7fe solid;
+	margin-top:-1px;}
+.szhyxbl td{
+	text-align:left;
+	padding-left:10px;}
+.szhyxbl td.titilcol{
+	background:#eef5fb;
+	text-align:right;
+	padding-right:10px;}
+.szhyxbl td b.colred{
+	margin-right:3px;}
+.szhyxbl table tr th{
+	text-align:left;
+	padding-left:10px;}
+.szhyxbl td input.inwid3,.szhyxbl td select.xlwid{
+	width:400px;
+	border:1px #ccc solid;
+	padding:2px;}
+.szhyxbl td select.xlwid{
+	color:#000000;}
+.bu_jyfw{
+	width:900px;
+	height:100px;}
+.txtcenter tr td{
+	text-align:center;}
+.txtcenter .gtleft{
+	float:left;
+	padding-left:10px;}
+.txtcenter .flright{
+	float:right;}
+.txtcenter .flright a{
+	margin-right:10px;}
+.flright a.zh{
+	color:#007ce0;}
+.flright a.sc{
+	color:#d10000;}
+/*三证合一 3*/
+.flr{
+	text-align:right;}
+.txtcenter .flright a.colgrey{
+	color:#a8aaab;}
+/*增值税纳税人资格登记*/
+.born{
+	border:none;}
+.padbto{
+	margin-bottom:5px;}
+.txtcen{
+	text-align:center;
+	padding:5px 0px;}
+	/*发票查验*/
+.fpcy{
+	width:600px;
+	margin:0px auto;
+	margin-top:50px;}
+.fpcy h2{
+	color:#06c;
+	text-align:center;
+	font-size:18px;
+	font-weight:normal;}
+.fpcy ul li{
+	margin-top:10px;}
+.fpcy_zh ul li{
+	float:left;}
+.fpcy ul li label{
+	width:200px;
+	display:inline-block;
+	margin-right:3px;
+	font-size:15px;
+	text-align:right;
+	vertical-align:middle;}
+.fpcy ul li label span.red{
+	color:red;
+	padding-left:2px;
+	padding-right:2px;}
+.fpcy ul li input,.fpcy ul li select{
+	background: url(../images/inputbg.jpg) repeat-x top left;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #CCC;
+    width: 290px;
+	vertical-align:middle;}
+.fpcy ul li input.btncy{
+	background:#cfe1f5 url(../images/btnbg.jpg) repeat-x left top;
+    width:195px;
+    border: 1px #2c59aa solid;
+    font-size: 14px;
+	height:25px;
+	line-height:25px;
+	vertical-align:middle;
+    padding: 2px 10px;	
+	cursor:pointer;
+	padding-bottom:27px;
+	font-family:microsoft yahei;}
+.fpcy_zh{
+	width:100%;
+	margin-bottom:15px;
+	margin-top:0px;}
+.fpcy_zh ul{
+	overflow:hidden;}
+.fpcy_zh ul li label{
+	width:auto;}
+.fpcy_zh ul li input,.fpcy_zh ul li select{
+	width:180px;}
+.fpcy_zh ul li input.btncyw_id{
+	width:80px;}
+/*电子档案查询*/
+.slcx tr.imgcent td{
+	text-align:center;}
+/*补录信息追加样式*/
+.scyzz{
+	font-size:14px;}
+.scyzz input{
+	margin-left:3px;
+	padding:3px;
+	text-align:center;
+	margin-bottom:15px;}
+.marg10{
+	margin-top:10px;
+	border:none;}
+	
+/*国地税减免备案样式*/
+table.marnone{
+	margin-top:0px;}
+.txcent{
+	text-align:center;}
+.txtleft{
+	float:left;}
+.txtright{
+	float:right;
+	padding-right:15px;}
+.txtright a.zh{
+	margin-right:10px;}
+.txtcen_cx td{
+	text-align:center;}
+.txtcen_cx td a.scbtn{
+	margin-right:10px;
+	padding:2px 15px;}
+.txtcen_cx td.btnleft{
+	text-align:left;}
+.marnone b.colred{
+	margin-right:3px;}
+
+.born td.textrig{
+	text-align:right;
+	padding-right:5px;}
+/*信息补录受理-国税*/
+.titibg{
+	background:#eef5fb;}
+.born .scbtn{
+	margin-right:5px;}
+/*补录受理 审核*/
+.txtred{
+	color:#d10000;}
+.saynoly{
+	background:#ECECEC;
+	width:605px;
+	padding:3px;}
+.saynoly textarea{
+	text-align:center;
+	width:596px;
+	height:50px;}
+/*联合登记信息查询 单独提示页面*/
+.djxxts{
+	width:400px;
+	padding:10px;
+	background:#ebf5ff;
+	border:1px #99bce6 solid;
+	margin:0 auto;
+	text-align:center;}
+.djxxts p.tsxx{
+	font-size:16px;
+	line-height:30px;
+	margin-bottom:15px;}
+.djxxts a.scbtn{
+	font-size:13px;}
+/*友情提示*/
+.friend_tips{
+	width:612px;
+	margin:0px auto;}
+.friend_tips h1{
+	margin-top:120px;
+	text-align:center;
+	font-size:18px;}
+.fri_tips{	
+	width:620px;
+	height:185px;
+	border:1px solid #a0a0a0;}
+.fri_tips_left{
+	width:182px;
+	float:left;
+	text-align:center;
+	border-right:1px solid #a0a0a0;
+	height:185px;}
+.fri_tips_left img{
+	margin-top:33px;
+	vertical-align:middle;}
+.fri_tips_right{
+	padding:20px;
+	width:387px;
+	float:left;}
+.fri_tips_right p{
+	margin-top:20px;
+	font-size:16px; font-weight:normal;
+	color:#666060;}
+.zsy_btn{
+	background: url(../images/fraid_btnl.png) no-repeat left top;
+    display: block;
+    float: left;
+    padding-left:39px;
+	margin-top:20px;
+	margin-top:0\9;}
+.zsy_btn a{
+	background: url(../images/fraid_btnr.png) no-repeat right top;
+    display: block;
+    float: left;
+    height:40px;
+    text-decoration: none;
+    line-height:40px;
+    padding-right: 9px;
+	text-indent:12px;
+    color: #fff;
+	font-size:16px;}
+.zsy_btn input{
+	background: url(../images/fraid_btnr.png) no-repeat right top;
+    display: block;
+    float: left;
+    height:40px;
+    text-decoration: none;
+    line-height:40px;
+    padding-right: 9px;
+	text-indent:12px;
+    color: #fff;
+	font-size:16px;
+	border:none;}
+/*税收优惠减免备案*/.clearfix{
+	clear:both;}
+.width843{
+	width:843px;
+	height:250px;}
+.width843 .height250{
+	height:250px;}
+.width843 .height250 img{
+	margin-top:65px;}
+.wid620{
+	width:620px;}
+.wid620 p{
+	text-align:center;
+	color:#444;
+	margin-bottom:30px;}
+.wid620 ul li{
+	margin-bottom:15px;
+	height:38px;
+	float:left;}
+.fri_tips_right ul li p.bgleft{
+	background:url(../images/bgblue.png) no-repeat left center;
+	width:159px;
+	height:38px;
+	line-height:38px;
+	float:left;
+	margin-top:0px;
+	border:1px #0077ff solid;
+	color:#fff;
+	text-align:center;
+	font-size:18px;}
+.fri_tips_right ul li select.xzright,.fri_tips_right ul li input.srkwid{
+	width:385px;
+	height:40px;
+	margin-left:-1px;
+	border:1px #0077ff solid;
+	color:#666;
+	font-size:16px;}
+.marleft{
+	margin-left:200px;}
+.marleft_jmba{
+	margin-left:100px;}
+.fri_tips_right ul li p.bgred{
+	background:url(../images/bgred.png) no-repeat left center;
+	height:38px;
+	width:116px;
+	border:1px #d8322f solid;}
+.fri_tips_right ul li select.bored{
+	border:1px #d8322f solid;}
+.wid620 ul.maleft{
+	margin-left:40px;}
+.fri_tips_right ul li input.srkwid{
+	height:36px;}
+/*增值税一般纳税人查询页面样式勿删*/
+.szhyone{
+	text-align:left;
+	margin-left:0;}
+.szhyone2{
+	text-align:left;
+	margin-left:10px;
+	margin-bottom: -20px;}
+.szhyone2 ul li{
+	float:left;
+	background:#ecf4fd;
+	border:1px #c2d6ec solid;
+	margin-right:10px;
+	font-size:16px;}
+.szhyone2 ul li a{
+	height:28px;
+	line-height:28px;
+	padding:5px 15px;}
+.szhyone2 ul li.bgblue2 a{ color:#fff;}
+.szhyone2 ul li.bgblue2{
+	background:#0978e0;
+	color:#fff;}
+.error{
+	color:red;
+	font-size:12px;
+    padding-left:5px;}
+   /*上传按钮重置样式*/
+.fileInputContainer{ 
+   background:url(../images/xzwj_bg.jpg) no-repeat left top;  
+   position:relative;
+   font-size: 14px;
+   width:80px;
+   top:12px;
+  height: 31px;
+  line-height: 31px;
+  display:inline-block;}  
+.fileInput{  
+   height:31px;  
+   overflow: hidden;  
+   font-size: 300px;  
+   position:absolute;  
+   right:0;  
+   top:0;  
+   opacity: 0;  
+   filter:alpha(opacity=0);  
+   cursor:pointer;} 
+ input.bbnore{
+	 border:none;
+	 text-align:left;}
+	/*审核弹出层样式*/
+table.tccys{
+	height:99px;}
+table.tccys,table.tccys td{
+	border:none;}
+table.tccys td textarea{
+	width:576px;
+	text-align:left;}
+table.tccys td.wid584{
+	widht:584px;
+	text-align:center;}
+table.tccys td a{
+	background:url(../images/btnbg.jpg) repeat-x left center;
+	border:1px #2c59aa solid;
+	padding:2px 15px;}
+/*行政许可审批*/
+.btnmar{
+	margin-left:90px;}
+.btnmar span{
+	margin-right:20px;}
+.btnmar .xzbtn{
+	margin-top:5px;}
+.bluebtn{
+	background:url(../images/fraid_btncx.jpg) no-repeat left center;}
+.gbbtn{
+	background:url(../images/fraid_btngb.jpg) no-repeat left center;}
+.wid620 p.marbot{
+	margin-bottom:22px;}
+.marleft_wcbydj{
+	margin-left:23px;}	
+/*新增页面追加*/
+.tablmain table.dqxz_yas1 input,.tablmain table.dqxz_yas1 label{
+	vertical-align:middle; margin:0px; padding:0px 3px;}
+.tablmain table.dqxz_yas1 label{
+	margin-right:10px;}
+.message-main-top{text-align:right;font-size:14px;color:#333; width:98%;margin-bottom: 20px; display:block; font-weight:normal;}
+.message-main-top em,.table-dqxz td.bt3 em{font-size:14px;color:#ff5252;}
+.tablmain table.dqxz_yas1 tr th{
+    background: #edf6fb;
+    color: #333;
+	text-align:right;}
+.tablmain table.dqxz_yas1 input.dfx{
+	width: 17px;
+    height: 17px;}
+.tablmain table.dqxz_yas1 input.txt{
+	width:80%;
+	height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    border: 1px solid #cfcfcf;}
+.tablmain table.dqxz_yas1 textarea.wbynr{
+	border: 1px solid #cfcfcf;
+	padding:3px;
+	width:80%;
+	vertical-align:middle;
+	line-height:28px;}
+.tablmain table.dqxz_yas1 select{
+	width:80%;
+    height: 24px;
+    border: 1px solid #cfcfcf;
+    border-radius: 3px;}
+.tablmain table.dqxz_yas1 select.wid154px{
+	width: 154px;}
+.tablmain table.dqxz_yas1 tr th,.tablmain table.dqxz_yas1 tr td{
+	padding:3px;}
+.tablmain table.dqxz_yas1 tr td{
+	padding-left:20px;}
+.tablmain table.dqxz_yas1 tr th .red{ color:red;}
+.preview{display:inline-block;font-size:14px;color:#777;padding:6px 0px;}
+.preview a{font-style:normal;color:#1998f0;}
+.del_btn{ color:#d10000;}
+.xxts .mar10px{
+	margin-right:10px;}
+.xxts .scbtn{ margin-left:3px; margin-right:3px;}
+.taxp_butt{
+    text-align: center;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.taxp_butt a{
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+    line-height: 28px;
+    background: url("../images/taxpa1.png");
+    border:1px solid #4780e6;
+}
+.taxp_butt a:hover{
+    background: url("../images/new2.png");
+}

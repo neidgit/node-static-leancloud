@@ -1,0 +1,389 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td{margin:0;padding:0}body,button,input,select,textarea{font:12px/1.5 "Microsoft YaHei","Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif}h1{font-size:18px}h2{font-size:16px}h3{font-size:14px}h4,h5,h6{font-size:100%}address,cite,dfn,em,var{font-style:normal}code,kbd,pre,samp,tt{font-family:"Courier New",Courier,monospace}small{font-size:12px}ul,ol{list-style:none}a{text-decoration:none}a:hover,a:active,a:visited{text-decoration:none}abbr[title],acronym[title]{border-bottom:1px dotted;cursor:help}q:before,q:after{content:''}legend{color:#000}fieldset,img{border:0}button,input,select,textarea{font-size:100%;outline:none;}table{border-collapse:collapse;border-spacing:0}hr{border:0;height:1px}html{overflow-y:scroll;}body{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+
+ #toolbarId {
+  position: fixed;
+  top:0;
+  background:#fff;
+  width:100%;
+  z-index: 10;
+ }
+ .toolbar  .over td{
+	overflow:hidden !important;
+	height:20px !important;
+}
+table tr input.focus{
+            border:1px solid #FF0000;
+}
+table tr .error{
+            border-bottom:solid #ff0000;
+			color:#FF0000;
+}
+.toolbar .over .b_center a {
+	padding-top:0;
+	padding-bottom:0;
+	margin-left: 2px;
+	margin-right: 2px;
+	display:block;
+	vertical-align:middle;
+	text-decoration:none;
+	white-space:nowrap;
+	height:9px;
+	*height:auto;
+	color:#333;
+}
+table select{
+	border:1px solid  transparent;
+	margin:-5px;
+    background-color: #ccecff !important;
+	height:100%;     
+    width: 100%;
+	.padding:3px;
+	padding:3px;
+	*padding:3px;
+	overflow:hidden;
+ }
+ table select[readonly]{
+    background-color: #ffffff !important;
+    color: #000000;
+    opacity: 1; 
+    *padding:3px;
+    }
+ table select[disabled]{
+    background-color: #ffffff !important;
+    color: #000000;
+    opacity: 1; 
+    *padding:3px;
+    }
+#selectFb{
+ width:400px;
+  position: fixed;
+  top:13px;  
+  left:360px;
+  background:#f0f7fc;
+  color:#333;
+  height:20px;
+  z-index: 11;
+ }
+ #tablePages{
+ 	margin-left:10px;
+ }
+ #selectFb span{
+  display:inline-block;
+  .margin-bottom:8px;
+ }
+ #selectFb select{
+   .margin-bottom:3px;
+ }
+#selectFb input{
+   .margin-bottom:3px;
+ }
+table {
+  border-collapse: collapse;
+  /* margin: 0 auto; */
+  font-size:12px;
+ }
+ table, td, th {
+  border: 1px solid #495d80; } 
+ table td {
+    text-align: center;
+    height: 25px; }
+ table .left{
+  	padding-left: 5px;
+  	text-align: left;
+  }
+ table .left2 {
+  padding-left: 20px;
+  text-align: left;
+}
+ table .left3 {
+  padding-left: 40px;
+  text-align: left;
+}
+  table .right{
+    text-align:right;
+  }
+  table td .pizhu{
+    background-image:url(img/Slice.png)   !important;
+    background-position:top right;
+    background-repeat:no-repeat;
+   	.background-image:url(img/Slice.png)   !important;
+    .background-position:top right;
+    .background-repeat:no-repeat;
+  }
+  table .bfcpxs_bg{
+    background: url(img/1.png) no-repeat;
+  }
+  /*显示和隐藏部分  */
+  table .none{
+    display:none; 
+  } 
+  .table_none{
+   display:none;
+  }
+  table .append{
+    display:none;
+  }
+  table .radio_btn{
+  	width: 20px;
+  	height:20px;
+  }
+  table .h_first{
+     font-size: x-large;
+  }
+ table tr td  input {
+    height:100% !important;
+    width: 98%;
+    *height: 100%;
+    padding:0;
+   *padding:8px 0;
+	margin:0;
+	*margin:0;
+    border:1px solid  transparent;
+    background-color: #ccecff !important;
+    }
+    table tr td .aaa_aaa{
+    	width: 97%;
+    }
+    table tr td .bbb_bbb{
+    	width: 95%;
+    }
+table  .number{
+	 text-align: right;
+}
+table  .number0{
+	 text-align: right;
+}
+table  .number4{
+	 text-align: right;
+}
+table  .number3{
+	 text-align: right;
+}
+table  .number10{
+	 text-align: right;
+}
+table  .number6{
+	 text-align: right;
+}
+/*有redyonly属性的input值为字符串的样式*/
+table  .readonly{
+	text-align: right;
+}
+
+table td p .address{
+	display: inline-block;
+	height:20px;
+	width:100px;
+}
+
+ table tr td input[disabled]{
+    background-color: #ffffff !important;
+    color: #000000;
+    opacity: 1; 
+    *padding:0;
+    }
+ table tr td input[readonly]{
+    background-color: #ffffff !important;
+    color: #000000;
+    opacity: 1; 
+    *padding:0;
+    text-align:right;
+    }
+ table thead td{
+ border: none;
+ height: 20px;
+}
+ table tfoot td{
+    boder:none;
+ }
+ table tfoot .btn_p{
+     width:90px;
+    
+   }
+   table tfoot .btn_p_3{
+     width:155px;
+    
+   }
+   table tbody .btn_p{
+     width:90px;
+    
+   }
+ table tfoot .btn_p input{
+    	width:40px;
+    	height:20px;
+    	cursor: pointer;
+    	margin-left:3px;
+    	text-align:center;
+    	background:#ddd;
+    	border-radius:3px;
+    	.padding:0 0 4px 0;
+   }
+   table tfoot .btn_p_3 input{
+    	width:40px;
+    	height:20px;
+    	cursor: pointer;
+    	margin-left:3px;
+    	text-align:center;
+    	background:#ddd;
+    	border-radius:3px;
+    	.padding:0 0 4px 0;
+   }
+    table tbody .btn_p input{
+    	width:40px;
+    	height:20px;
+    	cursor: pointer;
+    	margin-left:3px;
+    	text-align:center;
+    	background:#ddd;
+    	border-radius:3px;
+    	.padding:0 0 4px 0;
+   }
+ table tfoot .btn_p input:hover{
+   border:1px solid #8F8F8F;
+ }
+.bfcpxs_foot td{
+	border:none;
+}
+
+  .f_er  p{
+  	text-align: left;
+  	padding-left: 5px;
+  }
+  .f_er  p input{
+  	width: 150px;
+  	background: none;
+  }
+  	
+ .footer {
+    padding-top: 10px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 50px;
+}
+  .footer li {
+      float: left;
+      width: 33.33%; }
+  .footer li input {
+        
+        border: none; }
+        
+ .toolbar{
+    margin-top:7px;
+ }
+  .toolbar td{
+      border:none;
+     }
+  .toolbar tr{
+     border:none;
+     }
+  .toolbar table{
+      border:none;
+     }
+  .toolbar .button_table{
+	border:none;
+   }
+  .hzns_foot, .hzns_foot td, {
+     border:none;
+   }
+   /*校验弹出框*/
+   .pop{
+      width:900px;
+      height:370px;
+      background:#ccecff;
+      border: 1px solid #aaa ;
+      
+   }
+   .pop .center{
+      background:#fff;
+      width:880px;
+      height: 350px;
+      margin:10px auto; 
+      overflow: scroll;    
+   }
+   .pop .center table{
+     border:1px solid #aaa; 
+   }
+   .pop .center table td{
+   	 border:1px solid #aaa;
+   }
+   /*申报弹出框*/
+	.sb_pop{
+	  width:650px;
+      height:230px;
+      background:#ccecff;
+      border: 1px solid #aaa ;
+	}
+	.sb_pop .sb_center{
+	  background:#fff;
+      width:630px;
+      height: 210px;
+      margin:10px auto;
+	}
+	.sb_pop .sb_center table{
+	  border-collapse: collapse;
+	  border:1px solid #aaa;
+	  width:100%; 
+	}
+	.sb_pop .sb_center table td{
+	  border:1px solid #aaa;
+	}
+	.sb_pop .sb_center table .left_l .contact_input{
+	  text-align:left;
+	  margin-left:5px;
+	}
+	.sb_pop .sb_center table .right{
+	  text-align:right;
+	  margin-right:5px;
+	}
+	/*导入弹出框*/
+.import{
+	 width:650px;
+     height:230px;
+	 border: 1px #aaa solid;
+}
+.import .table_list { 
+	margin:0 auto; 
+	width:100%; 
+	background:#fff; 
+	border:1px solid #99d3fb;
+}
+.import .table_list td{ 
+	background-color: #fff;
+}
+.import .table_list .indent {
+	height: 28px;
+	line-height: 28px;
+	text-indent: 15px;
+	background-color: #fff;
+}
+.import .table_list .indent .mybtn {
+	height: 24px;
+	width: 100px;
+	BORDER: #c7cacd 1px solid; 
+	PADDING-RIGHT: 2px; 
+	PADDING-LEFT: 2px; 
+	FONT-SIZE: 12px; 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#3c99e1, EndColorStr=#14419a); 
+	CURSOR: hand; 
+	COLOR: #ffffff; 
+	PADDING-TOP: 2px; 
+}
+ table tr td input.Wdate {
+  text-align:center !important;
+  line-height:30px;
+ }
+ table tbody .btn_p_info{
+     width:190px;
+    
+   }
+ table tfoot .btn_p_info input{
+   	width:140px;
+   	height:20px;
+   	cursor: pointer;
+   	margin-left:3px;
+   	text-align:center;
+   	background:#ddd;
+   	border-radius:3px;
+   	.padding:0 0 4px 0;
+   }
+/*# sourceMappingURL=style.css.map */

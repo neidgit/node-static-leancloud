@@ -1,0 +1,149 @@
+
+
+
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="ie-comp"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9;IE=8; IE=EDGE" />
+  <head>
+    <title>内蒙古自治区国地税联合网上办税服务平台</title>
+	
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN"> 
+ 
+    <link href="css/css.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="xt/js/jquery-1.9.1.min.js"></script>
+    <script language="javascript" src="../../js/myCommon.js"></script> 
+    <script language="javascript" src="xt/js/layer-v1.8.5/layer.min.js" type="text/javascript" ></script>
+    <script src="xt/js/jquery.validate.n.js" type="text/javascript"></script> <!--表单验证必须库--> 
+	<script src="xt/js/validate-ex.js" type="text/javascript"></script> 
+    <script type="text/javascript" src="xt/js/myDate97/WdatePicker.js" defer="defer"></script>
+    <script type="text/javascript" src="xt/js/tools.js"></script>
+    <script language="javascript" src="xt/js/layer-v1.8.5/layer.min.js" type="text/javascript" ></script> 
+  </head>
+ 
+<OBJECT id="AXSecurity"  codeBase="/WQNFApp/cabs/AXSecurity.ocx"	
+ classid="CLSID:F5A1E785-0D4A-4E07-A3E7-15B1D3AF52E6" >
+</OBJECT>
+<style>
+	
+</style>
+<body onload="checkie()">
+  
+<!-- <option value="992df862540d4dada5f0d27882f89173|海勃湾华美嘉卫浴店|2|10111503000000305196|150302740222151||null|1511270000892|11503900000">海勃湾华美嘉卫浴店</option>
+<option value="992df862540d4dada5f0d27882f89173|平庄崔永杰调料水产批发|3|10111504000000800000|150429730114321||null|1511240000691|11504030000">平庄崔永杰调料水产批发</option>
+ -->
+ <div times="2" id="xubox_shade2" class="xubox_shade" style="position:absolute;display:none; z-index:19891016; background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div>
+<div times="2" showtime="0" style="position:absolute;display:none; z-index: 19891016; width: 400px; height: auto; margin-left: -200px; top: 196.5px; left: 50%;" id="xubox_layer2" class="xubox_layer" type="dialog">
+	<div style="background-color: rgb(255, 255, 255); z-index: 19891016; height: 207px;" class="xubox_main">
+		<div class="xubox_dialog">
+			<span class="xubox_msg xulayer_png32 xubox_msgico xubox_msgtype1"></span>
+			<span class="xubox_msg xubox_text" style="padding-top: 54px;">该免费通道是内蒙古国家税务局为了方便纳税人设计开通的，能够实现网上申报的又一服务措施，其实实现的业务功能完全等同于CA申报和VPDN通道。一键登录、无需开户、无需缴费、放心使用！</span>
+		</div>
+		<div class="xubox_title" style="cursor: move;" move="ok"><em>信息</em></div>
+		<span class="xubox_setwin"><a class="xubox_close xulayer_png32 xubox_close0" href="javascript:;" style="" onclick="altHide()"></a></span>
+		<span class="xubox_botton"><a href="javascript:;" class="xubox_yes xubox_botton1" onclick="openNext()">确定</a></span>
+	</div>
+	<div id="xubox_border2" class="xubox_border" style="z-index: 19891015;position:absolute; background-color: rgb(0, 0, 0); opacity: 0.3; top: -6px; left: -6px; width: 412px; height: 219px;">
+	</div>
+</div>
+
+
+<div times="4" id="xubox_shade4" class="xubox_shade" style="position:absolute;display:none;z-index:19891018; background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div>
+<div times="4" showtime="0" style="z-index: 19891018; width: auto; height: auto; margin-left: -100.5px; top: 234px; left: 50%; position:absolute;display:none; " id="xubox_layer4" class="xubox_layer" type="dialog">
+	<div  style="background-color: rgb(255, 255, 255); z-index: 19891018; height: 132px;" class="xubox_main">
+	<div class="xubox_dialog">
+		<span class="xubox_msg xulayer_png32 xubox_msgico xubox_msgtype8"></span>
+		<span class="xubox_msg xubox_text" style="padding-top: 54px;">请选择纳税人身份！</span>
+	</div>
+	<div class="xubox_title" style="cursor: move;" move="ok"><em>信息</em></div>
+	<span class="xubox_setwin"><a class="xubox_close xulayer_png32 xubox_close0" href="javascript:;" style="" onclick="msgClose()"></a></span>
+	<span class="xubox_botton"><a href="javascript:;" class="xubox_yes xubox_botton1" onclick="msgClose()">确定</a></span>
+	</div>
+	<div id="xubox_border4" class="xubox_border" style="position:absolute; z-index: 19891017; background-color: rgb(0, 0, 0); opacity: 0.3; top: -6px; left: -6px; width: 213px; height: 144px;"></div>
+</div>
+
+
+
+
+
+<div class="friend_tips width843" style="height:330px;width:860px;">
+	<h1>国税网报登录</h1>
+    <div class="fri_tips width843" style="height:330px;width:860px;">
+    	<div class="fri_tips_left height250" style="height:330px;"><img src="images/fraid_img01.png" /></div>
+    	<font color="red"><br/>尊敬的纳税人：<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您好！在您使用平台进行“国税网报”的过程中，如果遇到问题，请您根据以下问题分类，拨打相应的咨询电话，以便客服人员能够为您提供相应的服务：<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、如遇到vpdn或网报登录的问题，请拨打4008612366咨询。<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、如您已经成功登陆网报系统后，遇到报表问题，小规模纳税人请拨打4008612366咨询，一般纳税人请拨打95113咨询。<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、如遇到CA证书无法正常登录问题，请拨打0471--8942366咨询。<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、税收业务方面的问题，建议您咨询相关税收专管员。<br/>
+    友情提示：<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、小助手安装不成功的问题，请您先关闭杀毒软件，以管理员身份运行小助手。<br/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、如果您拨打电话与咨询的问题不一致，客服人员会告知您相应的咨询电话，请理解并拨打相应的客服电话咨询，谢谢！</font>
+        <div class="fri_tips_right wid620" style="margin-top:-20px;">
+        	<ul>
+            	<p>
+            	<li><p class="bgleft">纳税人名称</p></li>
+                <li><select class="xzright" id="nsrsf" name="nsrsf" >
+                	
+                	<option value="-1" >----请选择----</option>
+                	
+				  	<option class="select1" value="b3f6a1e2a6224350be7f4582bc3cb710|包头市新兴盛能源有限责任公司|1|10111502000000009017|150221552847349|10121502001002036926|150221552847349|9c0ad887e4fc72c9e92e44931a7b0467|11502210000|91150221552847349D"></option>
+				  
+				  	<option class="select2" value="b3f6a1e2a6224350be7f4582bc3cb710|冀中能源峰峰集团内蒙古新兴煤炭有限公司|1|10111502000000171596|150221793639196|10121502001000744002|150221793639196|439a64d15af85c757c1c3e06082b9c45|11502210000|"></option>
+				  
+                </select></li>
+                
+            </ul>
+          	<p>
+            <div class="tip_btn marleft_jmba" id="cz" align="left" >
+               <span class="zsy_btn" style="margin-left:10px"><a href="#" onclick="msg()"> 免费通道 </a></span>
+               <span class="zsy_btn" style="margin-left:10px"><a href="#" > CA证书登陆 </a></span>
+               <span class="zsy_btn" style="margin-left:10px"><a href="#" > VPDN登陆 </a></span>
+             <!--   <span class="zsy_btn xzbtn gbbtn" style="margin-left:50px"><a href="#" onclick="closeck()">关闭窗口</a></span> -->
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+	function openNext(){
+
+  location.href = "../page/page.html";
+
+	}
+	function msg(){
+		var val = $("#nsrsf").val();
+		if(val == "-1"){
+			 msgShow();
+		}else{
+			altShow()
+		}
+	}
+function altShow(){
+		
+		
+$("#xubox_shade2").show();
+$("#xubox_layer2").show();
+
+}
+function msgShow(){
+	$("#xubox_shade4").show();
+	$("#xubox_layer4").show();
+
+}
+function msgClose(){
+	$("#xubox_shade4").hide();
+	$("#xubox_layer4").hide();
+
+}
+function altHide(){
+		
+$("#xubox_shade2").hide();
+$("#xubox_layer2").hide();
+
+}
+</script>
+</body>      
+</html>
